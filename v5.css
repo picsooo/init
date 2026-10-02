@@ -32,7 +32,7 @@
 .rays5{position:absolute;inset:-30%;z-index:1;background:conic-gradient(from 0deg,transparent,rgba(108,196,236,.18) 6deg,transparent 12deg,transparent 30deg,rgba(255,255,255,.1) 36deg,transparent 42deg,transparent 60deg);opacity:0}
 .scn.on .rays5{animation:rays5 10s linear forwards}@keyframes rays5{0%{opacity:0;transform:rotate(0)}20%{opacity:1}100%{opacity:.7;transform:rotate(25deg)}}
 /* contrôles */
-#ctl{position:absolute;left:0;right:0;bottom:0;z-index:30;padding:0 clamp(14px,3vw,30px) calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;height:9vh;opacity:.4;transition:opacity .3s}#ctl:hover{opacity:1}
+#ctl{position:absolute;left:0;right:0;bottom:calc(var(--demo-h,40px));z-index:30;padding:0 clamp(14px,3vw,30px) calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;height:9vh;opacity:.4;transition:opacity .3s}#ctl:hover{opacity:1}
 #ctl button{background:none;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:7px 14px;font:700 12.5px MR;cursor:pointer;white-space:nowrap}
 #ctl .pg{flex:1;height:3px;background:rgba(255,255,255,.18);position:relative;border-radius:3px}#ctl .pg i{position:absolute;left:0;top:0;bottom:0;background:#6cc4ec;box-shadow:0 0 10px #6cc4ec;width:0}
 #ctl .pg em{position:absolute;top:-3px;width:1px;height:9px;background:rgba(255,255,255,.4)}
@@ -83,3 +83,4 @@
 .teamline{position:absolute;left:0;right:0;bottom:6%;z-index:5;display:flex;justify-content:center;align-items:flex-end;gap:0}
 .teamline .ch{position:relative;left:auto;bottom:auto;margin:0 -6px;width:clamp(90px,11vw,170px)!important}
 @media (max-width:620px){.ch{width:120px!important}.prop{display:none}}
+@media (max-width:620px){#film{--demo-h:54px}#ctl{opacity:.85;height:auto;padding-bottom:10px;flex-wrap:wrap}#ctl .pg{order:-1;flex-basis:100%;margin-bottom:8px}}

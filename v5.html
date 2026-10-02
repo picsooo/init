@@ -78,11 +78,14 @@ at(S(12)+1.45,()=>{const[W,H]=fx.size();fx.boom(W/2,H/2,1.2);SFX.boom(1)});
 at(S(13)+.5,()=>{const[W,H]=fx.size();fx.boom(W/2,H*.45,1.8);SFX.boom(1.3)});
 at(S(14)+2,()=>{SFX.music.set('calm')});
 
-// ---------- narration (voix de synthèse du navigateur) ----------
-const NAR={on:true,u:null,say(t){if(!NAR.on||!window.speechSynthesis)return;const lang=document.documentElement.lang==='en'?'en-US':'fr-FR';const u=new SpeechSynthesisUtterance(t.replace(/[«»]/g,'').replace(/…/g,'...'));u.lang=lang;u.rate=.98;u.pitch=1;const vs=speechSynthesis.getVoices().filter(v=>v.lang.replace('_','-').toLowerCase().startsWith(lang.slice(0,2)));const pref=vs.find(v=>/Thomas|Audrey|Amelie|Google|Daniel|Samantha/i.test(v.name))||vs[0];if(pref)u.voice=pref;speechSynthesis.cancel();speechSynthesis.speak(u)},stop(){window.speechSynthesis&&speechSynthesis.cancel()}};
-if(window.speechSynthesis)speechSynthesis.getVoices();
-SC.forEach((sc,i)=>{sc.querySelectorAll('.subt span, .loc').forEach(el=>{const d=parseFloat(el.style.animationDelay)||0;const txt=el.dataset.t||el.textContent.trim();if(!txt)return;at(S(i)+d+.05,()=>NAR.say(window.I18N_T?I18N_T(txt):txt))});
- if(sc.classList.contains('mont')){const b=sc.querySelector('.big');if(b)at(S(i)+.2,()=>NAR.say(b.textContent))}});
+// ---------- narration (piste audio enregistrée, synchronisée au film) ----------
+const NAR={on:true,a:new Audio(),
+ load(){const l=document.documentElement.lang==='en'?'en':'fr';NAR.a.src='video/narration-'+l+'.mp3';NAR.a.preload='auto';NAR.a.volume=1},
+ unlock(){NAR.load();const p=NAR.a.play();if(p)p.then(()=>{NAR.a.pause();NAR.a.currentTime=0}).catch(()=>{})},
+ sync(){if(!NAR.on||!playing){if(!NAR.a.paused)NAR.a.pause();return}if(el>83){NAR.a.pause();return}
+  if(NAR.a.paused){NAR.a.currentTime=el;NAR.a.play().catch(()=>{})}else if(Math.abs(NAR.a.currentTime-el)>.35)NAR.a.currentTime=el},
+ stop(){NAR.a.pause()}};
+setInterval(()=>NAR.sync(),250);
 let typer=null;function enter(i){SC.forEach((s,k)=>s.classList.toggle('on',k===i));cur=i;clearInterval(typer);const l=SC[i].querySelector('.loc');if(l){const t=l.dataset.t||(l.dataset.t=l.textContent);l.textContent='';let k=0;typer=setInterval(()=>{if(!playing)return;l.textContent=t.slice(0,++k);if(k>=t.length)clearInterval(typer)},60)}}
 function tick(now){requestAnimationFrame(tick);const dt=Math.min((now-last)/1000,.1);last=now;if(!playing)return;el+=dt;
  let i=0;while(i<SC.length-1&&el>=starts[i+1])i++;if(i!==cur)enter(i);
@@ -103,16 +106,16 @@ function storm(){const sc=document.getElementById('storm'),W=innerWidth,H=innerH
   f.animate([{transform:`translate(${x}px,${y}px) scale(.4)`,opacity:0},{opacity:1,offset:.2},{transform:`translate(${x+(Math.random()-.5)*160}px,${y-60}px) scale(1.1)`,opacity:0}],{duration:2600,delay:400+i*650,fill:'both'})})}
 // contrôles
 const pp=document.getElementById('pp'),mu=document.getElementById('mu');
-function play(){playing=true;if(window.speechSynthesis)speechSynthesis.resume();film.classList.remove('paused');pp.textContent='❚❚ Pause';fx.setRun(true);if(SFX._ctx())SFX._ctx().resume()}
-function pause(){playing=false;if(window.speechSynthesis)speechSynthesis.pause();film.classList.add('paused');pp.textContent='▶ Lecture';fx.setRun(false);if(SFX._ctx())SFX._ctx().suspend()}
+function play(){playing=true;film.classList.remove('paused');pp.textContent='❚❚ Pause';fx.setRun(true);if(SFX._ctx())SFX._ctx().resume()}
+function pause(){playing=false;NAR.stop();film.classList.add('paused');pp.textContent='▶ Lecture';fx.setRun(false);if(SFX._ctx())SFX._ctx().suspend()}
 pp.onclick=()=>playing?pause():play();
-mu.onclick=()=>{if(SFX.on){SFX.music.stop();SFX.disable();NAR.on=false;NAR.stop();mu.textContent='🔇'}else{SFX.enable();NAR.on=true;mu.textContent='🔊';if(el>S(2)&&el<S(4)+6)SFX.music.start()}};
+mu.onclick=()=>{if(SFX.on){SFX.music.stop();SFX.disable();NAR.on=false;NAR.stop();mu.textContent='🔇'}else{SFX.enable();NAR.on=true;NAR.unlock();mu.textContent='🔊';if(el>S(2)&&el<S(4)+6)SFX.music.start()}};
 function closeFilm(){playing=false;NAR.stop();SFX.music&&SFX.music.stop();fx.setRun(false);film.classList.add('gone');document.body.style.overflow='';try{sessionStorage.setItem('ia_v5',1)}catch(e){}}
 document.getElementById('skip').onclick=()=>{NAR.stop();el=TOTAL;fired=new Set(EV.map((e,k)=>k));enter(SC.length-1);SFX.music.stop();film.dataset.done=1;document.getElementById('ctl').style.display='none'};
 document.getElementById('tosite').onclick=closeFilm;
 function restart(){film.classList.remove('gone');document.body.style.overflow='hidden';delete film.dataset.done;document.getElementById('ctl').style.display='';el=0;cur=-1;fired=new Set();SC.forEach(s=>s.classList.remove('on'));document.getElementById('gate5')?.remove();scrollTo(0,0);play()}
-document.getElementById('again').onclick=restart;document.getElementById('replay2').onclick=()=>document.getElementById('replay').click();document.getElementById('replay').onclick=()=>{if(!SFX.on&&confirm('Revoir le film avec le son ?')){SFX.enable();mu.textContent='🔊'}restart()};
-const startFilm=snd=>{NAR.on=!!snd;if(snd){SFX.enable();mu.textContent='🔊';NAR.say(' ')}else mu.textContent='🔇';document.getElementById('gate5').remove();play()};
+document.getElementById('again').onclick=restart;document.getElementById('replay2').onclick=()=>document.getElementById('replay').click();document.getElementById('replay').onclick=()=>{if(!SFX.on){SFX.enable();mu.textContent='🔊'}NAR.on=true;NAR.unlock();restart()};
+const startFilm=snd=>{NAR.on=!!snd;if(snd){SFX.enable();mu.textContent='🔊';NAR.unlock()}else mu.textContent='🔇';document.getElementById('gate5').remove();play()};
 document.getElementById('g5s').onclick=()=>startFilm(true);document.getElementById('g5n').onclick=()=>startFilm(false);
 document.getElementById('g5k').onclick=e=>{e.preventDefault();closeFilm()};
 let seen5=false;try{seen5=sessionStorage.getItem('ia_v5')}catch(e){}
