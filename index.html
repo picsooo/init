@@ -5,7 +5,7 @@
 <meta name="description" content="Initiative Academy, hub professionnel à Saïd Hamdine, Alger : coworking, formations, domiciliation, bureaux privatifs et incubateur.">
 </head><body>
 <div id="hdr"></div><main>
-<section class="hero"><div class="bg"><img id="hbg" alt="Hall d'entrée d'Initiative Academy"></div><div class="hero3d" data-logo3d aria-label="Logo Initiative Academy en 3D"></div>
+<section class="hero"><div class="bg"><img id="hbg" alt="Hall d'entrée d'Initiative Academy"></div><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 8 188 192h-40L100 88 52 192H12z" fill="#fff"/><path d="M60 140h96l-14 22H46z" fill="#6cc4ec"/></svg>
  <div class="wrap in"><div>
   <span class="kick" style="color:#5b9bff">Saïd Hamdine · Alger</span>
   <h1 style="margin-top:18px">L'écosystème qui<br><b>propulse</b> votre <span class="rot" id="rot">projet</span>.</h1>
@@ -48,7 +48,7 @@
  <div class="gal" id="gal"></div></div></section>
 <section style="padding-top:0"><div class="wrap"><div class="cband rv"><img class="bgi" alt="" id="cbg"><span class="kick" style="color:#5b9bff">Visite</span><h2 style="margin-top:14px">Prêt à rejoindre<br><em style="color:#5b9bff">Initiative Academy</em> ?</h2><p class="lead">Prenez rendez-vous pour visiter nos espaces et découvrir l'offre qui correspond à votre projet.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn b" href="rendez-vous.html">Prendre rendez-vous</a><a class="btn o" id="ctel"></a></div></div></div></section>
 </main><div id="ftr"></div>
-<script src="js/three.min.js"></script><script src="js/logo3d-data.js"></script><script src="data.js"></script><script src="core.js"></script>
+<script src="data.js"></script><script src="core.js"></script>
 <script>
 document.getElementById('hbg').src=PH.hall;document.getElementById('abimg').src=PH.form1;
 const W=['projet','startup','carrière','entreprise'];let wi=0;setInterval(()=>{wi=(wi+1)%W.length;const r=document.getElementById('rot');r.style.opacity=0;setTimeout(()=>{r.textContent=W[wi];r.style.opacity=1},300)},2600);document.getElementById('rot').style.transition='opacity .3s';
@@ -58,4 +58,4 @@ document.getElementById('eq').innerHTML=EQUIP.map(e=>'<div class="rv">'+icon(e[0
 document.getElementById('fprev').innerHTML=['chatgpt','negociation','loi','initmkt','accueil','formateur'].map(k=>{const f=F.find(x=>x[0]===k);return '<a class="fc rv" href="formation.html?f='+k+'" style="--c:'+CAT[f[2]][1]+'"><span class="tg">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="meta"><span>'+(FD[f[0]]?FD[f[0]].duree.split(' (')[0].split(' +')[0]:'Groupe de 15 max.')+'</span><span>Découvrir →</span></div></a>'}).join('');
 document.getElementById('gal').innerHTML=[[PH.hall,'Hall d\'entrée'],[PH.form2,'Salle de formation'],[PH.bureaux,'Bureaux privatifs']].map(g=>'<a href="galerie.html"><img src="'+g[0]+'" alt="'+g[1]+'" loading="lazy"><span>'+g[1]+'</span></a>').join('');
 document.getElementById('cbg').src=PH.hall2;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel; reveal();
-</script><script src="i18n.js"></script><script src="js/logo3d.js"></script></body></html>
+</script><script src="i18n.js"></script></body></html>
