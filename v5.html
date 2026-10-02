@@ -13,7 +13,7 @@
  <div class="scn" data-d="8" data-mood="calm"><div class="bg push g-cold"><img data-ph="hall2" alt=""></div><div class="loc" style="--w:21ch">Alger. 07 h 42.</div>
   <div class="subt"><span style="--d:3.6s">Chaque grande entreprise commence par une idée.</span><span style="--d:3.6s;position:absolute;left:0;right:0;top:0;animation-delay:3.8s">Et souvent… par quelqu'un de seul.</span></div></div>
  <!-- 4 : Amine -->
- <div class="scn" data-d="8"><div class="bg pan g-cold"><img data-ph="dom" alt=""></div><div class="loc" style="--w:27ch">Amine, 27 ans. Une idée.</div>
+ <div class="scn" data-d="8"><div class="bg pan"><div class="night"><div class="sky"></div><div class="city"></div><svg class="room" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><radialGradient id="scr" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#bfe9ff" stop-opacity=".9"/><stop offset=".5" stop-color="#239bd2" stop-opacity=".35"/><stop offset="1" stop-color="#239bd2" stop-opacity="0"/></radialGradient><linearGradient id="win" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1d40"/><stop offset="1" stop-color="#06122b"/></linearGradient></defs><rect x="980" y="90" width="460" height="520" rx="6" fill="url(#win)" stroke="#1b2a44" stroke-width="14"/><path d="M1210 90v520M980 350h460" stroke="#1b2a44" stroke-width="10"/><ellipse cx="720" cy="520" rx="520" ry="300" fill="url(#scr)"/><rect x="0" y="690" width="1600" height="210" fill="#03070f"/><rect x="250" y="660" width="1000" height="34" rx="6" fill="#0a1424"/><g class="lap"><path d="M560 660l40-210h300l40 210z" fill="#0c1626"/><path d="M600 455h300l-36 190H636z" fill="#6cc4ec" opacity=".85"/><g fill="#ffffff" opacity=".55"><rect x="630" y="480" width="150" height="8" rx="4"/><rect x="630" y="500" width="210" height="8" rx="4"/><rect x="630" y="520" width="120" height="8" rx="4"/><rect x="630" y="560" width="190" height="8" rx="4"/><rect x="630" y="580" width="90" height="8" rx="4"/></g></g><path d="M520 900c0-150 60-230 160-260 40-12 60-40 60-80 0-60 40-100 100-100s100 40 100 100c0 40 20 68 60 80 100 30 160 110 160 260z" fill="#010307"/><path d="M740 460c0-60 40-100 100-100s100 40 100 100" fill="none" stroke="#6cc4ec" stroke-width="3" opacity=".55"/><g transform="translate(1290 470)"><path d="M0 190h80" stroke="#1a2232" stroke-width="10"/><rect x="34" y="40" width="10" height="150" fill="#1a2232"/><path d="M-30 50h120l-24-60H-6z" fill="#e8d7a0" opacity=".9"/><ellipse cx="30" cy="60" rx="150" ry="60" fill="#ffd98a" opacity=".12"/></g><rect x="430" y="640" width="70" height="20" rx="3" fill="#e9eef4"/><rect x="1166" y="610" width="28" height="40" rx="4" fill="#d8dee6"/></svg></div></div><div class="loc" style="--w:27ch">Amine, 27 ans. Une idée.</div>
   <div class="subt"><span style="--d:3.6s">Pas de bureau. Pas d'adresse. Pas d'équipe.</span><span style="--d:3.8s;position:absolute;left:0;right:0;top:0;animation-delay:3.9s">Il travaille partout… et nulle part.</span></div></div>
  <!-- 5 : la tempête administrative -->
  <div class="scn" data-d="7" data-mood="tension" id="storm"><div class="z"><div class="big" style="color:#ff7b6b">Les obstacles.</div></div></div>
@@ -26,7 +26,7 @@
  <div class="scn mont" data-d="3.2"><div class="bg pan g-teal"><img data-ph="hall2" alt=""></div><div class="z"><div class="lbl">Domiciliation</div><div class="big">Une adresse.</div></div></div>
  <div class="scn mont" data-d="3.2"><div class="bg push g-teal"><img data-ph="form1" alt=""></div><div class="z"><div class="lbl">Formations</div><div class="big">Des compétences.</div></div></div>
  <div class="scn mont" data-d="3.2"><div class="bg pan g-teal"><img data-ph="bureaux" alt=""></div><div class="z"><div class="lbl">Bureaux privatifs</div><div class="big">Une équipe.</div></div></div>
- <div class="scn mont" data-d="3.2"><div class="bg push g-teal"><img data-ph="dom" alt=""></div><div class="z"><div class="lbl">Incubateur</div><div class="big">Un réseau.</div></div></div>
+ <div class="scn mont" data-d="3.2"><div class="bg push g-teal"><img data-ph="hall" alt=""></div><div class="z"><div class="lbl">Incubateur</div><div class="big">Un réseau.</div></div></div>
  <!-- 9 : six mois plus tard -->
  <div class="scn" data-d="7" id="stampsc"><div class="bg pull g-warm"><img data-ph="bureaux" alt=""></div><div class="loc" style="--w:20ch">Six mois plus tard.</div><div class="z"><div class="stamp">Entreprise<br>immatriculée ✓</div></div></div>
  <!-- 10 : titre -->
@@ -78,6 +78,11 @@ at(S(12)+1.45,()=>{const[W,H]=fx.size();fx.boom(W/2,H/2,1.2);SFX.boom(1)});
 at(S(13)+.5,()=>{const[W,H]=fx.size();fx.boom(W/2,H*.45,1.8);SFX.boom(1.3)});
 at(S(14)+2,()=>{SFX.music.set('calm')});
 
+// ---------- musique du film (piste composée, synchronisée) ----------
+SFX.music={start(){},set(){},stop(){},pulse(){}};
+const MUS=new Audio('video/musique-film.mp3');MUS.preload='auto';MUS.volume=.55;
+const musUnlock=()=>{const p=MUS.play();if(p)p.then(()=>{MUS.pause();MUS.currentTime=0}).catch(()=>{})};
+setInterval(()=>{if(!SFX.on||!playing||el>85){if(!MUS.paused)MUS.pause();return}if(MUS.paused){MUS.currentTime=el;MUS.play().catch(()=>{})}else if(Math.abs(MUS.currentTime-el)>.35)MUS.currentTime=el},250);
 // ---------- narration (piste audio enregistrée, synchronisée au film) ----------
 const NAR={on:true,a:new Audio(),
  load(){const l=document.documentElement.lang==='en'?'en':'fr';NAR.a.src='video/narration-'+l+'.mp3';NAR.a.preload='auto';NAR.a.volume=1},
@@ -109,13 +114,13 @@ const pp=document.getElementById('pp'),mu=document.getElementById('mu');
 function play(){playing=true;film.classList.remove('paused');pp.textContent='❚❚ Pause';fx.setRun(true);if(SFX._ctx())SFX._ctx().resume()}
 function pause(){playing=false;NAR.stop();film.classList.add('paused');pp.textContent='▶ Lecture';fx.setRun(false);if(SFX._ctx())SFX._ctx().suspend()}
 pp.onclick=()=>playing?pause():play();
-mu.onclick=()=>{if(SFX.on){SFX.music.stop();SFX.disable();NAR.on=false;NAR.stop();mu.textContent='🔇'}else{SFX.enable();NAR.on=true;NAR.unlock();mu.textContent='🔊';if(el>S(2)&&el<S(4)+6)SFX.music.start()}};
+mu.onclick=()=>{if(SFX.on){SFX.music.stop();SFX.disable();NAR.on=false;NAR.stop();mu.textContent='🔇'}else{SFX.enable();NAR.on=true;NAR.unlock();musUnlock();mu.textContent='🔊';if(el>S(2)&&el<S(4)+6)SFX.music.start()}};
 function closeFilm(){playing=false;NAR.stop();SFX.music&&SFX.music.stop();fx.setRun(false);film.classList.add('gone');document.body.style.overflow='';try{sessionStorage.setItem('ia_v5',1)}catch(e){}}
 document.getElementById('skip').onclick=()=>{NAR.stop();el=TOTAL;fired=new Set(EV.map((e,k)=>k));enter(SC.length-1);SFX.music.stop();film.dataset.done=1;document.getElementById('ctl').style.display='none'};
 document.getElementById('tosite').onclick=closeFilm;
 function restart(){film.classList.remove('gone');document.body.style.overflow='hidden';delete film.dataset.done;document.getElementById('ctl').style.display='';el=0;cur=-1;fired=new Set();SC.forEach(s=>s.classList.remove('on'));document.getElementById('gate5')?.remove();scrollTo(0,0);play()}
-document.getElementById('again').onclick=restart;document.getElementById('replay2').onclick=()=>document.getElementById('replay').click();document.getElementById('replay').onclick=()=>{if(!SFX.on){SFX.enable();mu.textContent='🔊'}NAR.on=true;NAR.unlock();restart()};
-const startFilm=snd=>{NAR.on=!!snd;if(snd){SFX.enable();mu.textContent='🔊';NAR.unlock()}else mu.textContent='🔇';document.getElementById('gate5').remove();play()};
+document.getElementById('again').onclick=restart;document.getElementById('replay2').onclick=()=>document.getElementById('replay').click();document.getElementById('replay').onclick=()=>{if(!SFX.on){SFX.enable();mu.textContent='🔊'}NAR.on=true;NAR.unlock();musUnlock();restart()};
+const startFilm=snd=>{NAR.on=!!snd;if(snd){SFX.enable();mu.textContent='🔊';NAR.unlock();musUnlock()}else mu.textContent='🔇';document.getElementById('gate5').remove();play()};
 document.getElementById('g5s').onclick=()=>startFilm(true);document.getElementById('g5n').onclick=()=>startFilm(false);
 document.getElementById('g5k').onclick=e=>{e.preventDefault();closeFilm()};
 let seen5=false;try{seen5=sessionStorage.getItem('ia_v5')}catch(e){}

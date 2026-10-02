@@ -84,3 +84,9 @@
 .teamline .ch{position:relative;left:auto;bottom:auto;margin:0 -6px;width:clamp(90px,11vw,170px)!important}
 @media (max-width:620px){.ch{width:120px!important}.prop{display:none}}
 @media (max-width:620px){#film{--demo-h:54px}#ctl{opacity:.85;height:auto;padding-bottom:10px;flex-wrap:wrap}#ctl .pg{order:-1;flex-basis:100%;margin-bottom:8px}}
+.night{position:absolute;inset:0;background:linear-gradient(180deg,#020611,#06122b 60%,#03070f)}
+.night .sky{position:absolute;inset:0;background:radial-gradient(1px 1px at 20% 30%,#fff,transparent),radial-gradient(1px 1px at 70% 20%,#cfe9f8,transparent),radial-gradient(1px 1px at 85% 40%,#fff,transparent);opacity:.5}
+.night .city{position:absolute;left:61%;top:10%;width:29%;height:58%;background:radial-gradient(circle at 20% 70%,rgba(255,200,120,.5) 0 3px,transparent 4px),radial-gradient(circle at 45% 80%,rgba(108,196,236,.5) 0 3px,transparent 4px),radial-gradient(circle at 70% 65%,rgba(255,200,120,.45) 0 2px,transparent 3px),radial-gradient(circle at 85% 85%,rgba(255,255,255,.4) 0 3px,transparent 4px),radial-gradient(circle at 30% 90%,rgba(255,180,100,.4) 0 4px,transparent 6px);filter:blur(2px);animation:city 6s ease-in-out infinite alternate}
+@keyframes city{to{opacity:.6}}
+.night .room{position:absolute;inset:0;width:100%;height:100%}
+.night .lap path:nth-child(2){animation:scrn 3s ease-in-out infinite}@keyframes scrn{50%{opacity:.7}}
