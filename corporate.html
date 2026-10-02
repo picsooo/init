@@ -12,6 +12,15 @@
  <div class="pic rv"><img id="p1" alt="Initiative Academy"><svg class="tri" viewBox="0 0 200 200"><path d="M100 8 188 192h-40L100 88 52 192H12z" fill="#1f6fff"/><path d="M60 140h96l-14 22H46z" fill="#06122b"/></svg><div class="card"><span style="font-size:24px">☕</span>Café et thé offerts<br>toute la journée</div></div>
 </div></section>
 <section style="padding-top:0"><div class="wrap"><div class="shead"><div><span class="kick">Nos services</span><h2 style="margin-top:14px">Un écosystème complet</h2></div><p class="lead">Tout ce dont vous avez besoin pour créer, développer et faire grandir votre activité.</p></div><div class="sv2" id="sv"></div></div></section>
+<section id="entreprises" style="padding-top:0"><div class="wrap">
+ <div class="shead"><div><span class="kick">Services aux entreprises</span><h2 style="margin-top:14px">Créez et gérez votre <em>entreprise</em>.</h2></div><p class="lead">De la création à la gestion du quotidien, nous prenons en charge vos démarches.</p></div>
+ <div class="biz">
+  <a class="bz big rv" href="service.html?s=creation"><span class="n">01</span><h3>Création d'entreprise &amp; assistance à la création</h3><p>Forme juridique, codes d'activité CNRC, dossier, registre du commerce, NIF, NIS, CASNOS : nous vous accompagnons jusqu'à l'immatriculation, avec une adresse chez nous et sans louer de bureau.</p><span class="go">Créer mon entreprise →</span></a>
+  <a class="bz rv" href="service.html?s=domiciliation"><span class="n">02</span><h3>Domiciliation d'entreprise</h3><p>Une adresse légale et fiscale à Alger, avec attestation pour le registre du commerce.</p><span class="go">En savoir plus →</span></a>
+  <a class="bz rv" href="service.html?s=boite"><span class="n">03</span><h3>Boîte postale</h3><p>Réception de votre courrier, notification à chaque arrivée et retrait quand vous voulez.</p><span class="go">En savoir plus →</span></a>
+  <a class="bz rv" href="service.html?s=assistance"><span class="n">04</span><h3>Assistance administrative</h3><p>Coursier administratif, déclarations, formalités et démarches CASNOS.</p><span class="go">En savoir plus →</span></a>
+  <a class="bz rv wide" href="rendez-vous.html?s=domiciliation" style="background:var(--ice)"><span class="n">→</span><h3>Un projet ?</h3><p>Prenez rendez-vous : un premier diagnostic gratuit de votre situation.</p><span class="go">Prendre rendez-vous →</span></a>
+ </div></div></section>
 <section style="padding-top:0"><div class="wrap"><div class="band rv"><div><b>500+</b><span>membres actifs</span></div><div><b>50+</b><span>formations</span></div><div><b>100+</b><span>entreprises</span></div><div><b>800 m²</b><span>d'espaces</span></div></div><p class="tovalid"><i></i>Chiffres à valider par l'administration d'Initiative Academy</p></div></section>
 <section style="padding-top:0"><div class="wrap"><div class="shead"><div><span class="kick">Formations</span><h2 style="margin-top:14px">Formations professionnelles</h2></div><a class="btn o" href="formations.html">Tout le catalogue →</a></div><div class="fgrid" id="fp"></div></div></section>
 <section style="background:var(--ice)"><div class="wrap"><div class="shead"><div><span class="kick">Comment ça marche</span><h2 style="margin-top:14px">Rejoindre Initiative Academy</h2></div></div>
@@ -22,7 +31,7 @@
 <script src="data.js"></script><script src="core.js"></script>
 <script>
 document.getElementById('p1').src=PH.hall;document.getElementById('tb').innerHTML='<a href="tel:'+CO.telh+'">☎ '+CO.tel+'</a> · <a href="mailto:'+CO.mail+'">'+CO.mail+'</a>';
-document.getElementById('sv').innerHTML=SERV.map(s=>'<a class="s2 rv" href="rendez-vous.html?s='+s[0]+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><div><small>'+s[1]+'</small><h3>'+s[2]+'</h3><ul>'+s[4].slice(0,3).map(x=>'<li>'+x+'</li>').join('')+'</ul></div></a>').join('');
+document.getElementById('sv').innerHTML=SERV.map(s=>'<a class="s2 rv" href="'+(s[0]==='formations'?'formations.html':'service.html?s='+s[0])+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><div><small>'+s[1]+'</small><h3>'+s[2]+'</h3><ul>'+s[4].slice(0,3).map(x=>'<li>'+x+'</li>').join('')+'</ul></div></a>').join('');
 document.getElementById('fp').innerHTML=['chatgpt','delegue','formateur'].map(k=>{const f=F.find(x=>x[0]===k);return '<a class="fc rv" href="formation.html?f='+k+'" style="--c:'+CAT[f[2]][1]+'"><span class="badge">Programme complet</span><span class="tg">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="meta"><span>'+FD[k].duree.split(' (')[0].split(' +')[0]+'</span><span>Découvrir →</span></div></a>'}).join('');
 document.getElementById('eq').innerHTML=EQUIP.map(e=>'<div class="rv" style="background:#fff;color:var(--n)">'+icon(e[0])+'<h3>'+e[1]+'</h3><p style="color:var(--mut)">'+e[2]+'</p></div>').join('');
 document.getElementById('cbg').src=PH.hall2;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel;reveal();

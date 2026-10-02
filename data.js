@@ -63,3 +63,42 @@ delegue:{titre:'Délégué commercial : une formation complète pour réussir',d
 F.find(f=>f[0]==='delegue')[3]='Le délégué commercial développe les ventes d\'une entreprise auprès d\'une clientèle professionnelle. Une formation complète de 5 jours pour exercer ce métier.';
 F.find(f=>f[0]==='chatgpt')[3]='Démystifier ChatGPT et l\'exploiter pour gagner en productivité sur les tâches répétitives. 2 jours, 14 heures.';
 F.find(f=>f[0]==='formateur')[3]='Training of Trainers : concevoir, animer et évaluer une formation. 3 jours de pratique et 3 mois de suivi.';
+// Pages services détaillées
+const SD={
+coworking:{t:'Coworking',h:'Un espace de travail qui vous inspire',img:PH.form2,grp:'Espaces',
+ intro:'Un poste de travail dans un espace moderne et entièrement équipé, au sein d\'une communauté d\'entrepreneurs, de freelances et de startups. Vous venez quand vous voulez, vous payez ce que vous utilisez.',
+ incl:['Wi-Fi haut débit sécurisé inclus','Espaces lounge et zones de détente','Café et thé offerts toute la journée','Impression et scan à disposition','Accès aux salles de réunion sur réservation','Événements et rencontres entre membres'],
+ formules:[['Journée','Pour une réunion, une journée de travail au calme ou pour essayer l\'espace.'],['Semaine','Pour un projet ponctuel ou une période chargée.'],['Mois','Pour faire d\'Initiative Academy votre bureau au quotidien.']],
+ pour:['Freelances et indépendants','Startups et porteurs de projet','Télétravailleurs','Équipes en déplacement à Alger']},
+bureaux:{t:'Bureaux privatifs',h:'Votre bureau dédié, clé en main',img:PH.bureaux,grp:'Espaces',
+ intro:'Un bureau fermé rien que pour votre équipe, meublé et équipé, avec tous les services du hub. Vous emménagez et vous travaillez dès le premier jour.',
+ incl:['Bureaux de 1 à 10 personnes','Mobilier et équipements premium inclus','Accès sécurisé 24 h/24 et 7 j/7','Contrats flexibles et évolutifs','Wi-Fi, impression, café et thé inclus','Accès aux salles de réunion et aux espaces communs'],
+ formules:[['Bureau individuel','Pour un dirigeant, un consultant ou un professionnel libéral.'],['Bureau d\'équipe','De 2 à 10 postes pour votre équipe.'],['Sur mesure','Une configuration adaptée à votre activité.']],
+ pour:['PME et filiales','Startups en croissance','Cabinets et consultants','Entreprises étrangères qui s\'installent à Alger']},
+domiciliation:{t:'Domiciliation d\'entreprise',h:'Une adresse professionnelle à Alger',img:PH.hall2,grp:'Entreprises',
+ intro:'Domiciliez le siège social de votre entreprise à Saïd Hamdine, Alger, sans louer de bureau. Une adresse légale et fiscale reconnue pour votre registre du commerce, vos documents officiels et votre image.',
+ incl:['Adresse légale et fiscale reconnue','Attestation de domiciliation pour le registre du commerce','Réception et gestion de votre courrier','Notification à l\'arrivée de chaque courrier','Assistance administrative incluse','Accès aux salles de réunion pour recevoir vos clients','Sans engagement, tarifs compétitifs'],
+ etapes:[['Rendez-vous','Nous étudions votre situation : création, transfert de siège ou ouverture d\'une agence.'],['Dossier','Vous nous remettez les pièces demandées, nous préparons le contrat de domiciliation.'],['Attestation','Vous recevez votre attestation de domiciliation pour vos démarches.'],['Gestion du courrier','Nous réceptionnons votre courrier et vous prévenons à chaque arrivée.']],
+ pour:['Créateurs d\'entreprise','Entreprises qui transfèrent leur siège','Auto-entrepreneurs et freelances','Sociétés étrangères qui s\'implantent en Algérie']},
+creation:{t:'Création d\'entreprise',h:'Créez votre entreprise sans perdre de temps',img:PH.dom,grp:'Entreprises',
+ intro:'Nous vous accompagnons de l\'idée jusqu\'à l\'immatriculation : choix de la forme juridique, choix des activités, constitution du dossier et suivi des démarches. Vous pouvez créer votre registre du commerce avec une adresse chez nous, sans avoir à louer de bureau.',
+ incl:['Conseil sur la forme juridique (personne physique, EURL, SARL, SPA…)','Aide au choix des codes d\'activité CNRC','Domiciliation du siège social incluse','Constitution et vérification du dossier','Suivi des démarches : registre du commerce, NIF, NIS, CASNOS','Ouverture du compte bancaire : accompagnement'],
+ etapes:[['Diagnostic','Un premier rendez-vous pour définir votre projet, votre activité et la forme juridique adaptée.'],['Dossier','Nous préparons avec vous la liste des pièces et les documents nécessaires.'],['Immatriculation','Nous suivons le dépôt et les démarches jusqu\'à l\'obtention du registre du commerce.'],['Démarrage','Identifiants fiscaux, affiliation, compte bancaire : votre entreprise est prête à travailler.']],
+ pour:['Porteurs de projet','Jeunes diplômés','Freelances qui veulent se structurer','Investisseurs et diaspora']},
+assistance:{t:'Assistance administrative',h:'Vos démarches, entre de bonnes mains',img:PH.hall,grp:'Entreprises',
+ intro:'Gagnez du temps sur la paperasse. Notre équipe et notre coursier administratif vous aident à gérer les démarches liées aux impôts, aux déclarations, aux formalités de l\'entreprise et à la CASNOS.',
+ incl:['Coursier administratif pour vos dépôts et retraits de documents','Suivi des déclarations et des échéances','Formalités auprès des administrations','Démarches liées à la CASNOS','Modifications du registre du commerce','Conseil et orientation au quotidien'],
+ etapes:[['Besoin','Vous nous expliquez la démarche à effectuer.'],['Préparation','Nous vérifions avec vous les documents nécessaires.'],['Exécution','Notre coursier se charge des déplacements et des dépôts.'],['Suivi','Nous vous tenons informé jusqu\'à la fin de la démarche.']],
+ pour:['Entreprises domiciliées','Dirigeants de TPE et PME','Freelances et auto-entrepreneurs','Membres du coworking']},
+boite:{t:'Boîte postale',h:'Votre courrier, reçu et géré pour vous',img:PH.hall2,grp:'Entreprises',
+ intro:'Une adresse de réception pour votre courrier professionnel, gérée par notre équipe d\'accueil. Fini les courriers perdus : vous êtes prévenu à chaque arrivée et vous le récupérez quand vous voulez.',
+ incl:['Adresse de réception à Saïd Hamdine, Alger','Réception du courrier et des colis','Notification à chaque arrivée','Conservation sécurisée de votre courrier','Retrait aux horaires d\'ouverture','Réexpédition possible sur demande'],
+ etapes:[['Inscription','Vous choisissez la formule et signez le contrat.'],['Adresse','Vous communiquez votre nouvelle adresse à vos partenaires.'],['Réception','Nous réceptionnons et vous prévenons à chaque arrivée.'],['Retrait','Vous passez récupérer votre courrier, ou nous le réexpédions.']],
+ pour:['Entreprises domiciliées','Professionnels souvent en déplacement','Entreprises sans local fixe','Particuliers et professionnels libéraux']},
+incubateur:{t:'Incubateur',h:'Faites grandir votre startup',img:PH.dom,grp:'Espaces',
+ intro:'Un accompagnement pour transformer une idée en entreprise solide : mentorat, réseau d\'experts et d\'investisseurs, ateliers spécialisés et espace de travail dédié.',
+ incl:['Mentorat et accompagnement personnalisé','Réseau d\'experts et d\'investisseurs','Ateliers et workshops spécialisés','Espace de travail dédié à votre projet','Accès aux formations du hub','Mise en relation avec la communauté'],
+ etapes:[['Candidature','Vous nous présentez votre projet.'],['Sélection','Un entretien pour évaluer le projet et vos besoins.'],['Accompagnement','Mentorat, ateliers et suivi régulier.'],['Lancement','Vous êtes prêt à lancer et faire grandir votre activité.']],
+ pour:['Startups en phase d\'idée ou de lancement','Porteurs de projets innovants','Étudiants entrepreneurs','Projets à impact']}
+};
+const SORDER=['creation','domiciliation','boite','assistance','coworking','bureaux','incubateur'];

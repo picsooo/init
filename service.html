@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#06122b">
+<link rel="stylesheet" href="style.css">
+<title>Service — Initiative Academy</title></head><body>
+<div id="hdr"></div><main>
+<section class="page-h sp"><div class="bgp"><img id="bg" alt=""></div><div class="wrap" style="position:relative;z-index:2"><span class="kick" style="color:#5b9bff" id="grp"></span><h1 id="t" style="margin-top:14px"></h1><p class="lead" id="h"></p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px"><a class="btn b" href="#contact">Demander des informations</a><a class="btn o" href="rendez-vous.html" id="rdv">Prendre rendez-vous</a></div></div></section>
+<section><div class="wrap fd">
+ <div><div class="panel rv"><h2>Présentation</h2><p id="intro" style="font-size:17px"></p></div>
+  <div class="panel rv" style="margin-top:16px"><h2>Ce qui est inclus</h2><ul class="incl" id="incl"></ul></div>
+  <div class="panel rv" style="margin-top:16px" id="stw"><h2 id="sth"></h2><div class="steps3" id="steps"></div></div>
+  <div class="panel rv" style="margin-top:16px"><h2>Pour qui ?</h2><div class="chips2" id="pour"></div></div></div>
+ <div style="position:sticky;top:100px"><form class="f rv" id="contact"><h2 class="full" style="font-size:28px">Nous contacter</h2>
+  <label class="full">Service<input id="sn" readonly></label>
+  <label>Nom complet<input required></label><label>Téléphone<input type="tel" required></label>
+  <label class="full">E-mail<input type="email"></label>
+  <label class="full">Votre besoin<textarea placeholder="Décrivez votre projet ou votre demande…"></textarea></label>
+  <button class="btn b" type="submit">Envoyer ma demande</button></form>
+  <div class="panel" style="margin-top:14px"><p style="font-weight:700">Une question ? Appelez-nous</p><a id="tl" style="font:600 24px Sora;color:var(--b)"></a></div></div>
+</div></section>
+<section style="padding-top:0"><div class="wrap"><div class="shead"><h2 style="font-size:clamp(30px,3.4vw,44px)">Nos autres services</h2></div><div class="sv2" id="oth"></div></div></section>
+</main><div id="ftr"></div>
+<script src="data.js"></script><script src="core.js"></script>
+<script>
+const k=SD[new URLSearchParams(location.search).get('s')]?new URLSearchParams(location.search).get('s'):'domiciliation',d=SD[k];document.title=d.t+' — Initiative Academy';
+document.getElementById('bg').src=d.img;document.getElementById('grp').textContent=d.grp;document.getElementById('t').textContent=d.t;document.getElementById('h').textContent=d.h;
+document.getElementById('rdv').href='rendez-vous.html?s='+k;document.getElementById('intro').textContent=d.intro;document.getElementById('sn').value=d.t;
+document.getElementById('incl').innerHTML=d.incl.map(x=>'<li>'+x+'</li>').join('');
+const st=d.etapes||d.formules;document.getElementById('sth').textContent=d.etapes?'Comment ça se passe':'Nos formules';
+document.getElementById('steps').innerHTML=st.map((x,i)=>'<div><span>'+(d.etapes?'0'+(i+1):'◆')+'</span><b>'+x[0]+'</b><p>'+x[1]+'</p></div>').join('');
+document.getElementById('pour').innerHTML=d.pour.map(x=>'<span>'+x+'</span>').join('');
+const tl=document.getElementById('tl');tl.href='tel:'+CO.telh;tl.textContent=CO.tel;
+document.getElementById('oth').innerHTML=SORDER.filter(x=>x!==k).slice(0,5).map(x=>'<a class="s2" href="service.html?s='+x+'"><img src="'+SD[x].img+'" alt="" loading="lazy"><div><small>'+SD[x].grp+'</small><h3>'+SD[x].t+'</h3></div></a>').join('');
+document.getElementById('contact').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée !')};reveal();
+</script></body></html>

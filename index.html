@@ -26,6 +26,15 @@
  <div class="shead"><div><span class="kick">Nos services</span><h2 style="margin-top:14px">Un écosystème <em>complet</em>.</h2></div><p class="lead">Tout ce dont vous avez besoin pour créer, développer et faire grandir votre activité.</p></div>
  <div class="svc" id="svc"></div></div></section>
 
+<section id="entreprises" style="padding-top:0"><div class="wrap">
+ <div class="shead"><div><span class="kick">Services aux entreprises</span><h2 style="margin-top:14px">Créez et gérez votre <em>entreprise</em>.</h2></div><p class="lead">De la création à la gestion du quotidien, nous prenons en charge vos démarches.</p></div>
+ <div class="biz">
+  <a class="bz big rv" href="service.html?s=creation"><span class="n">01</span><h3>Création d'entreprise &amp; assistance à la création</h3><p>Forme juridique, codes d'activité CNRC, dossier, registre du commerce, NIF, NIS, CASNOS : nous vous accompagnons jusqu'à l'immatriculation, avec une adresse chez nous et sans louer de bureau.</p><span class="go">Créer mon entreprise →</span></a>
+  <a class="bz rv" href="service.html?s=domiciliation"><span class="n">02</span><h3>Domiciliation d'entreprise</h3><p>Une adresse légale et fiscale à Alger, avec attestation pour le registre du commerce.</p><span class="go">En savoir plus →</span></a>
+  <a class="bz rv" href="service.html?s=boite"><span class="n">03</span><h3>Boîte postale</h3><p>Réception de votre courrier, notification à chaque arrivée et retrait quand vous voulez.</p><span class="go">En savoir plus →</span></a>
+  <a class="bz rv" href="service.html?s=assistance"><span class="n">04</span><h3>Assistance administrative</h3><p>Coursier administratif, déclarations, formalités et démarches CASNOS.</p><span class="go">En savoir plus →</span></a>
+  <a class="bz rv wide" href="rendez-vous.html?s=domiciliation" style="background:var(--ice)"><span class="n">→</span><h3>Un projet ?</h3><p>Prenez rendez-vous : un premier diagnostic gratuit de votre situation.</p><span class="go">Prendre rendez-vous →</span></a>
+ </div></div></section>
 <section class="dark"><div class="wrap">
  <div class="shead"><div><span class="kick" style="color:#5b9bff">Équipements</span><h2 style="margin-top:14px">Tout est <em style="color:#5b9bff">inclus</em>.</h2></div><p class="lead">Des équipements premium pour travailler dans les meilleures conditions.</p></div>
  <div class="eq" id="eq"></div></div></section>
@@ -44,7 +53,7 @@
 document.getElementById('hbg').src=PH.hall;document.getElementById('abimg').src=PH.form1;
 const W=['projet','startup','carrière','entreprise'];let wi=0;setInterval(()=>{wi=(wi+1)%W.length;const r=document.getElementById('rot');r.style.opacity=0;setTimeout(()=>{r.textContent=W[wi];r.style.opacity=1},300)},2600);document.getElementById('rot').style.transition='opacity .3s';
 document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n,s=el.dataset.s||'+';let t0=null;const st=t=>{t0=t0||t;const p=Math.min((t-t0)/1600,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p===1?s:'');if(p<1)requestAnimationFrame(st)};setTimeout(()=>requestAnimationFrame(st),500)});
-document.getElementById('svc').innerHTML=SERV.map((s,i)=>'<article class="sc rv" id="'+s[0]+'" tabindex="0"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><span class="num">0'+(i+1)+'</span><h3><small>'+s[1]+'</small>'+s[2]+'</h3><ul>'+s[4].map(x=>'<li>'+x+'</li>').join('')+'</ul></article>').join('');
+document.getElementById('svc').innerHTML=SERV.map((s,i)=>'<a class="sc rv" id="'+s[0]+'" href="'+(s[0]==='formations'?'formations.html':'service.html?s='+s[0])+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><span class="num">0'+(i+1)+'</span><h3><small>'+s[1]+'</small>'+s[2]+'</h3><ul>'+s[4].map(x=>'<li>'+x+'</li>').join('')+'</ul></a>').join('');
 document.getElementById('eq').innerHTML=EQUIP.map(e=>'<div class="rv">'+icon(e[0])+'<h3>'+e[1]+'</h3><p>'+e[2]+'</p></div>').join('');
 document.getElementById('fprev').innerHTML=['chatgpt','negociation','loi','initmkt','accueil','formateur'].map(k=>{const f=F.find(x=>x[0]===k);return '<a class="fc rv" href="formation.html?f='+k+'" style="--c:'+CAT[f[2]][1]+'"><span class="tg">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="meta"><span>'+(FD[f[0]]?FD[f[0]].duree.split(' (')[0].split(' +')[0]:'Groupe de 15 max.')+'</span><span>Découvrir →</span></div></a>'}).join('');
 document.getElementById('gal').innerHTML=[[PH.hall,'Hall d\'entrée'],[PH.form2,'Salle de formation'],[PH.bureaux,'Bureaux privatifs']].map(g=>'<a href="galerie.html"><img src="'+g[0]+'" alt="'+g[1]+'" loading="lazy"><span>'+g[1]+'</span></a>').join('');
