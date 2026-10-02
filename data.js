@@ -31,3 +31,35 @@ const F=[
 ['loi','Loi 18-07 & Loi 25-11','ia','Le cadre légal algérien de la protection des données à caractère personnel et sa mise en conformité.'],
 ['donnees','Protection des données personnelles','ia','Sécuriser et protéger les données personnelles au sein de l\'entreprise.'],
 ['formateur','Formation de formateur','peda','Concevoir, animer et évaluer une formation professionnelle efficace.']];
+// Fiches détaillées (reprises d'Office Switch)
+const FD={
+chatgpt:{titre:'Introduction à l\'IA générative ChatGPT pour non-techniciens',duree:'2 jours (14 heures)',niveau:'Débutant',places:'10 personnes',prereq:'Avoir un PC',
+ objectif:'Démystifier l\'outil ChatGPT pour comprendre son utilité et comment il peut être exploité pour augmenter sa productivité sur des tâches souvent répétitives et chronophages.',
+ prog:[['Jour 1',[
+  ['Introduction aux notions de base de l\'IA générative (1 h 30)',['Petit historique de l\'IA, d\'Alan Turing à nos jours','Qu\'est-ce qu\'un LLM (Large Language Model) ?','Qu\'est-ce qu\'un prompt ?','Qu\'est-ce qu\'un token ?']],
+  ['Qu\'est-ce que ChatGPT et comment il fonctionne (2 h)',['Les principales différences entre les versions gratuites et payantes','Les interfaces et les options','Création et paramétrage du compte, personnalisation']],
+  ['ChatGPT en action, niveau 1 — ateliers pratiques (3 h 30)',['La génération de textes contextuels','Le traitement de texte par l\'IA','La génération de tableaux sur mesure']]]],
+ ['Jour 2',[
+  ['Exploration des applications pratiques de ChatGPT (3 h 30)',['La génération d\'images (et ses limites)','L\'analyse de documents','Introduction aux GPTs : qu\'est-ce qu\'un GPT, quelles sont les rubriques existantes','Introduction à la console de création d\'un GPT']],
+  ['Atelier pratique : mettre en œuvre ChatGPT pour des tâches répétitives et chronophages (3 h)',[]],
+  ['Discussion sur les limites et les considérations éthiques de l\'utilisation de ChatGPT (30 min)',[]]]]],
+ methode:'La formation alterne entre des présentations théoriques, des démonstrations pratiques et des ateliers interactifs pour permettre aux participants de mettre en pratique les concepts appris.'},
+formateur:{titre:'Training of Trainers (TOT)',duree:'3 jours de pratique intensive + 3 mois de suivi personnel',niveau:'Débutant',places:'15 personnes',
+ prereq:'Expérience préalable dans le domaine à enseigner (souvent recommandée) · Compétences de base en communication et en animation de groupes',
+ objectifs:['Développer des compétences en conception et animation de formations','Acquérir des méthodes pédagogiques efficaces','Savoir évaluer les besoins de formation et les résultats des apprenants','Maîtriser les outils et techniques de présentation','Favoriser l\'interactivité et l\'engagement des apprenants'],
+ public:['Formateurs internes et externes','Responsables de formation','Managers souhaitant développer des compétences de formation'],
+ prog:[['Contenu de la formation',[
+  ['1. Introduction à la formation de formateurs',['Rôles et responsabilités du formateur','Qualités d\'un bon formateur']],
+  ['2. Conception pédagogique',['Analyse des besoins de formation','Élaboration des objectifs pédagogiques','Conception des supports de formation (diaporamas, fiches techniques, etc.)']],
+  ['3. Méthodes et techniques pédagogiques',['Méthodes actives et participatives','Techniques d\'animation de groupe','Gestion des dynamiques de groupe']],
+  ['4. Techniques de présentation',['Prise de parole en public','Utilisation efficace des outils audiovisuels','Structuration d\'une session de formation']]]]],
+ certif:'Attestation de formation'},
+delegue:{titre:'Délégué commercial : une formation complète pour réussir',duree:'5 jours / 30 heures',niveau:'Débutant',places:'15 personnes',
+ intro:'Le délégué commercial est un professionnel du commerce chargé de développer les ventes d\'une entreprise auprès d\'une clientèle professionnelle. Cette formation complète permet aux stagiaires d\'acquérir toutes les compétences nécessaires pour exercer ce métier.',
+ atouts:['Métier en demande','Modules théoriques et pratiques','Compétences techniques','Formateurs expérimentés','Salle équipée','Attestation','Bonne communauté','Petit déjeuner'],
+ objectifs:['Acquérir les compétences techniques et comportementales nécessaires pour exercer le métier de délégué commercial','Développer son sens de l\'écoute et de la communication','Construire une relation de confiance avec les clients','Réaliser des objectifs de vente'],
+ prog:[['Modules',[['Modules propres au métier',['Les différentes appellations du métier','Les avantages et les inconvénients du poste','Les qualités et compétences requises','Les évolutions possibles et les missions','Les documents commerciaux et les conditions générales de vente','Les techniques de vente et les méthodes aidant la vente','Comment devenir un bon commercial et comment présenter un produit']]]]]}
+};
+F.find(f=>f[0]==='delegue')[3]='Le délégué commercial développe les ventes d\'une entreprise auprès d\'une clientèle professionnelle. Une formation complète de 5 jours pour exercer ce métier.';
+F.find(f=>f[0]==='chatgpt')[3]='Démystifier ChatGPT et l\'exploiter pour gagner en productivité sur les tâches répétitives. 2 jours, 14 heures.';
+F.find(f=>f[0]==='formateur')[3]='Training of Trainers : concevoir, animer et évaluer une formation. 3 jours de pratique et 3 mois de suivi.';

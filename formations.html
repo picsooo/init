@@ -13,7 +13,7 @@
 <script>
 const fl=document.getElementById('fl');let cat='all';
 fl.innerHTML='<button type="button" class="on" data-c="all">Toutes ('+F.length+')</button>'+Object.keys(CAT).map(c=>'<button type="button" data-c="'+c+'">'+CAT[c][0]+'</button>').join('');
-document.getElementById('grid').innerHTML=F.map(f=>'<a class="fc rv" data-c="'+f[2]+'" href="formation.html?f='+f[0]+'" style="--c:'+CAT[f[2]][1]+'"><span class="tg">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="meta"><span>Groupe de 15 max.</span><span>Découvrir →</span></div></a>').join('');
+document.getElementById('grid').innerHTML=F.map(f=>'<a class="fc rv" data-c="'+f[2]+'" href="formation.html?f='+f[0]+'" style="--c:'+CAT[f[2]][1]+'"><span class="tg">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="meta"><span>'+(FD[f[0]]?FD[f[0]].duree.split(' (')[0].split(' +')[0]:'Groupe de 15 max.')+'</span><span>Découvrir →</span></div></a>').join('');
 fl.onclick=e=>{const b=e.target.closest('button');if(!b)return;fl.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.fc').forEach(c=>c.classList.toggle('hide',b.dataset.c!=='all'&&c.dataset.c!==b.dataset.c))};
 document.getElementById('cbg').src=PH.hall2;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel; reveal();
 </script></body></html>

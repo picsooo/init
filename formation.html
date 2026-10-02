@@ -5,21 +5,36 @@
 <div id="hdr"></div><main>
 <section class="page-h"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 8 188 192h-40L100 88 52 192H12z" fill="#fff"/><path d="M60 140h96l-14 22H46z" fill="#5b9bff"/></svg><div class="wrap" style="position:relative;z-index:2"><a href="formations.html" style="opacity:.7;font-weight:700;font-size:14px">← Toutes les formations</a><br><span class="kick" id="tg" style="color:#5b9bff;margin-top:22px"></span><h1 id="t" style="margin-top:14px;font-size:clamp(40px,5.6vw,80px)"></h1><p class="lead" id="d"></p></div></section>
 <section><div class="wrap fd">
- <div><div class="cover rv" id="cv"><b id="cvt"></b></div>
-  <div class="panel rv" style="margin-top:16px"><h2>Ce que vous allez apprendre</h2><ul id="pts"></ul><p style="font-size:13px;color:var(--mut);margin-top:14px">Programme détaillé, dates et tarifs : communiqués sur demande.</p></div></div>
- <form class="f rv" id="ins"><h2 class="full" style="font-size:30px">S'inscrire</h2>
+ <div id="body"></div>
+ <div style="position:sticky;top:100px"><div class="panel rv" id="facts" style="margin-bottom:14px"></div>
+ <form class="f rv" id="ins"><h2 class="full" style="font-size:28px">S'inscrire</h2>
   <label class="full">Formation<input id="fn" readonly></label>
   <label>Nom complet<input required></label><label>Téléphone<input type="tel" required></label>
   <label class="full">E-mail<input type="email"></label>
   <label class="full">Inscription<select><option>À titre individuel</option><option>Pour mon entreprise</option></select></label>
-  <button class="btn b" type="submit">Envoyer ma demande</button></form>
+  <button class="btn b" type="submit">Envoyer ma demande</button></form></div>
 </div></section>
 </main><div id="ftr"></div>
 <script src="data.js"></script><script src="core.js"></script>
 <script>
 const q=new URLSearchParams(location.search).get('f'),f=F.find(x=>x[0]===q)||F[0],c=CAT[f[2]];document.title=f[1]+' — Initiative Academy';
 document.getElementById('tg').textContent=c[0];document.getElementById('t').textContent=f[1];document.getElementById('d').textContent=f[3];
-document.getElementById('cv').style.setProperty('--c',c[1]);document.getElementById('cvt').textContent=f[1];document.getElementById('fn').value=f[1];
-document.getElementById('pts').innerHTML=[f[3],'Format : présentiel, en petit groupe de 15 personnes maximum','Animée par un formateur expert du domaine','Attestation de formation remise en fin de session'].map(x=>'<li>'+x+'</li>').join('');
+document.getElementById('fn').value=f[1];
+const d=FD[f[0]];const li=a=>'<ul>'+a.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+let h='<div class="cover rv" style="--c:'+c[1]+'"><b>'+(d?d.titre:f[1])+'</b></div>';
+if(d){
+ if(d.intro)h+='<div class="panel rv" style="margin-top:16px"><h2>Présentation</h2><p>'+d.intro+'</p>'+(d.atouts?'<div class="chips2">'+d.atouts.map(x=>'<span>'+x+'</span>').join('')+'</div>':'')+'</div>';
+ if(d.objectif)h+='<div class="panel rv" style="margin-top:16px"><h2>Objectif</h2><p>'+d.objectif+'</p></div>';
+ if(d.objectifs)h+='<div class="panel rv" style="margin-top:16px"><h2>Objectifs de la formation</h2>'+li(d.objectifs)+'</div>';
+ if(d.public)h+='<div class="panel rv" style="margin-top:16px"><h2>Public cible</h2>'+li(d.public)+'</div>';
+ h+='<div class="panel rv" style="margin-top:16px"><h2>Programme</h2>'+d.prog.map(day=>'<h3 class="pday">'+day[0]+'</h3>'+day[1].map(m=>'<div class="mod"><b>'+m[0]+'</b>'+(m[1].length?li(m[1]):'')+'</div>').join('')).join('')+'</div>';
+ if(d.methode)h+='<div class="panel rv" style="margin-top:16px"><h2>Méthodes pédagogiques</h2><p>'+d.methode+'</p></div>';
+}else{
+ h+='<div class="panel rv" style="margin-top:16px"><h2>Présentation</h2><p>'+f[3]+'</p><p style="font-size:13px;color:var(--mut);margin-top:14px">Programme détaillé disponible sur demande auprès de notre équipe.</p></div>';
+}
+document.getElementById('body').innerHTML=h;
+const facts=[['Durée',d?d.duree:'Sur demande'],['Niveau',d?d.niveau:'Tous niveaux'],['Groupe',d?d.places:'15 personnes maximum'],['Catégorie',c[0]]];
+if(d&&d.prereq)facts.push(['Prérequis',d.prereq]);if(d&&d.certif)facts.push(['Certification',d.certif]);else facts.push(['Certification','Attestation de formation']);
+document.getElementById('facts').innerHTML='<h2 style="font-size:22px">Informations</h2><dl class="dl">'+facts.map(x=>'<dt>'+x[0]+'</dt><dd>'+x[1]+'</dd>').join('')+'</dl>';
 document.getElementById('ins').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée !')};reveal();
 </script></body></html>
