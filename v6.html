@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="cine.css"><link rel="stylesheet" href="v4.css"><link rel="stylesheet" href="v5.css">
+<title>Initiative Academy — Trois jours (le film)</title></head><body class="v3 v4 grain">
+<div id="film" class="bars">
+ <div id="gate5"><div class="in"><p>Initiative Academy présente</p><h2>Trois jours</h2><p style="letter-spacing:.2em;color:rgba(255,255,255,.6);text-transform:none;font-size:15px">Un court-métrage · 2 min 50</p><div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:10px"><button class="btn ult" id="g5s" type="button">▶ Lancer le film avec le son</button><button class="btn line" id="g5n" type="button">Sans le son</button></div><small>Conseillé : avec le son, volume modéré</small><a href="#site" id="g5k" style="color:#6cc4ec;font-weight:700;margin-top:6px">Passer directement au site →</a></div></div>
+ <canvas id="vfx"></canvas><canvas id="rain"></canvas>
+
+ <!-- 0 -->
+ <div class="scn" data-d="4.5"><div class="z"><div class="cred">Webminds présente</div></div></div>
+ <div class="scn" data-d="4.5"><div class="z"><div class="cred">Une production<b>Initiative Academy</b></div></div></div>
+ <!-- 2 : ouverture -->
+ <div class="scn" data-d="8"><div class="bg push g-cold"><img data-ph="hall2" alt=""></div><div class="loc">Alger. Novembre. 23 h 10.</div>
+  <div class="subt"><span style="--d:3.6s">Il pleut sur Alger.</span><span style="--d:4s;position:absolute;left:0;right:0;top:0;animation-delay:3.7s">Dans un appartement de Kouba, une lampe est encore allumée.</span></div></div>
+ <!-- 3 : Amine -->
+ <div class="scn" data-d="8"><div class="bg pan g-cold"><img data-ph="dom" alt=""></div><div class="loc">Amine Benali, 27 ans. Ingénieur.</div>
+  <div class="subt"><span style="--d:3.6s">Le jour, il est salarié. La nuit, il construit son projet.</span><span style="--d:4s;position:absolute;left:0;right:0;top:0;animation-delay:3.7s">Une application pour les artisans. Déjà 40 clients qui attendent.</span></div></div>
+ <!-- 4 : le message -->
+ <div class="scn" data-d="9"><div class="bg push g-cold"><img data-ph="dom" alt=""></div>
+  <div class="chat"><div class="b in" style="animation-delay:.6s"><small>Sofiane · associé</small>La banque confirme le rendez-vous. Jeudi 10 h.</div><div class="b in" style="animation-delay:2.2s"><small>Sofiane</small>Ils veulent le registre du commerce, l'adresse du siège et les statuts.</div><div class="b out" style="animation-delay:4.2s">On n'a rien de tout ça.</div><div class="b in" style="animation-delay:6s"><small>Sofiane</small>On a trois jours.</div></div></div>
+ <!-- 5 : compte à rebours -->
+ <div class="scn" data-d="5" data-mood="tension"><div class="z"><div class="count">J-3<small>Rendez-vous banque</small></div></div></div>
+ <!-- 6 : les obstacles -->
+ <div class="scn" data-d="8" id="storm"><div class="z"><div class="big" style="color:#ff7b6b">Trois jours.</div></div><div class="subt"><span style="--d:3.4s;animation-delay:1s">Un siège social ? Il n'a pas de bureau.</span><span style="--d:3.4s;position:absolute;left:0;right:0;top:0;animation-delay:4.4s">Des statuts, un NIF, la CASNOS… par où commencer ?</span></div></div>
+ <!-- 7 : l'appel -->
+ <div class="scn" data-d="8"><div class="bg pull g-cold"><img data-ph="hall2" alt=""></div><div class="phone"><div class="av">K</div><b>Karim</b><small>Ancien collègue · appel entrant</small><div class="acc">Accepter</div></div>
+  <div class="subt"><span style="--d:3.2s;animation-delay:2s">« Tu connais Initiative Academy ? Saïd Hamdine. »</span><span style="--d:3.2s;position:absolute;left:0;right:0;top:0;animation-delay:5.2s">« Vas-y demain matin. Demande l'accueil. »</span></div></div>
+ <!-- 8 : révélation -->
+ <div class="scn" data-d="9" data-mood="epic" id="reveal"><div class="bg pull g-teal"><img data-ph="hall" alt=""></div><div class="rays5"></div><div class="z"><img class="femb" src="img/emblem-light.png" alt=""><div class="big met" style="font-size:clamp(30px,5.4vw,82px);margin-top:16px;animation-delay:1.6s">Initiative Academy</div></div><div class="loc">Jour 1. 08 h 05. Saïd Hamdine.</div></div>
+ <!-- 9 : l'accueil -->
+ <div class="scn" data-d="8"><div class="bg pan g-teal"><img data-ph="hall2" alt=""></div><div class="loc">L'accueil.</div>
+  <div class="subt"><span style="--d:3.6s;animation-delay:.6s">« Vous avez trois jours ? Alors on commence maintenant. »</span><span style="--d:3.6s;position:absolute;left:0;right:0;top:0;animation-delay:4.3s">Domiciliation, dossier, démarches : l'équipe prend le relais.</span></div></div>
+ <!-- 10 : la domiciliation -->
+ <div class="scn" data-d="8"><div class="bg push g-teal"><img data-ph="form2" alt=""></div><div class="loc">Jour 1. 11 h 30.</div>
+  <div class="z"><div class="doc"><h4>ATTESTATION DE DOMICILIATION</h4><div class="l"><span>Société</span><b>SARL ARTISANA</b></div><div class="l"><span>Siège social</span><b>Saïd Hamdine, Alger</b></div><div class="l"><span>Gérant</span><b>Amine Benali</b></div><div class="l" style="border:0"><span>Statut</span><b style="color:#1a8a4a">Validée ✓</b></div></div></div></div>
+ <!-- 11 : le coursier -->
+ <div class="scn" data-d="8"><div class="bg pan g-cold"><img data-ph="bureaux" alt=""></div><div class="loc">Jour 2. Le coursier.</div>
+  <div class="notif" style="--dl:.8s"><i>📄</i><div><b>Assistance administrative</b><p>Dossier déposé au CNRC. Retrait prévu demain 9 h.</p></div></div>
+  <div class="notif" style="--dl:3.6s;top:calc(13vh + 86px)"><i>✅</i><div><b>Assistance administrative</b><p>NIF et NIS obtenus. Affiliation CASNOS en cours.</p></div></div>
+  <div class="subt"><span style="--d:3.4s;animation-delay:4.2s">Pendant ce temps, Amine travaille au coworking. Sur son produit.</span></div></div>
+ <!-- 12 : la nuit avant -->
+ <div class="scn" data-d="8"><div class="bg push g-cold"><img data-ph="form1" alt=""></div><div class="loc">Jour 2. 22 h 40. Salle de formation.</div>
+  <div class="subt"><span style="--d:3.6s;animation-delay:.5s">Un formateur reste tard pour l'aider à préparer sa présentation.</span><span style="--d:3.6s;position:absolute;left:0;right:0;top:0;animation-delay:4.2s">« Parle-leur de tes 40 clients. Pas de ton code. »</span></div></div>
+ <!-- 13 : J-0 -->
+ <div class="scn" data-d="4.5" data-mood="tension"><div class="z"><div class="count">J-0<small>Jeudi · 09 h 55</small></div></div></div>
+ <!-- 14 : la banque -->
+ <div class="scn" data-d="9"><div class="bg pull g-warm"><img data-ph="bureaux" alt=""></div><div class="loc">La banque. Salle de réunion.</div>
+  <div class="subt"><span style="--d:3s;animation-delay:.6s">« Le siège social ? »  — « Saïd Hamdine. Voici l'attestation. »</span><span style="--d:3s;position:absolute;left:0;right:0;top:0;animation-delay:3.7s">« Le registre du commerce ? » — « Retiré ce matin. »</span><span style="--d:2.6s;position:absolute;left:0;right:0;top:0;animation-delay:6.7s">Silence.</span></div></div>
+ <!-- 15 : le silence -->
+ <div class="scn" data-d="4"><div class="z"><div class="subt" style="position:static;transform:none"><span style="--d:3.6s">« Bienvenue, M. Benali. Le dossier est accepté. »</span></div></div></div>
+ <!-- 16 : la signature -->
+ <div class="scn" data-d="8" id="signsc"><div class="bg push g-warm"><img data-ph="bureaux" alt=""></div><div class="z"><div class="lbl" style="font:700 13px MR;letter-spacing:.5em;color:#6cc4ec;opacity:0">Contrat de financement</div>
+  <svg class="sign" viewBox="0 0 520 140"><path d="M20 100 C60 20,90 20,110 90 C125 130,140 60,165 60 C190 60,180 110,215 95 C250 80,260 40,290 50 C320 60,300 110,340 100 C380 90,390 50,420 60 C450 70,460 110,500 90"/></svg></div></div>
+ <!-- 17 : montage -->
+ <div class="scn mont" data-d="3"><div class="bg push g-teal"><img data-ph="form2" alt=""></div><div class="z"><div class="lbl">Mois 1</div><div class="big">Un poste au coworking.</div></div></div>
+ <div class="scn mont" data-d="3"><div class="bg pan g-teal"><img data-ph="form1" alt=""></div><div class="z"><div class="lbl">Mois 3</div><div class="big">Formation vente.</div></div></div>
+ <div class="scn mont" data-d="3"><div class="bg push g-teal"><img data-ph="dom" alt=""></div><div class="z"><div class="lbl">Mois 6</div><div class="big">L'incubateur.</div></div></div>
+ <div class="scn mont" data-d="3"><div class="bg pan g-teal"><img data-ph="bureaux" alt=""></div><div class="z"><div class="lbl">Mois 9</div><div class="big">Un bureau privatif.</div></div></div>
+ <!-- 21 : un an plus tard -->
+ <div class="scn" data-d="9" id="teamsc"><div class="bg pull g-warm"><img data-ph="bureaux" alt=""></div><div class="loc">Un an plus tard.</div>
+  <div class="z"><div class="big" style="font-size:clamp(28px,4.4vw,64px)">Artisana. 6 salariés.<br><span class="met">1 200 artisans.</span></div><div class="team"><span style="animation-delay:1.2s">A</span><span style="animation-delay:1.4s">S</span><span style="animation-delay:1.6s">N</span><span style="animation-delay:1.8s">L</span><span style="animation-delay:2s">R</span><span style="animation-delay:2.2s">Y</span></div></div></div>
+ <!-- 22 : retour -->
+ <div class="scn" data-d="8"><div class="bg push g-teal"><img data-ph="hall" alt=""></div><div class="loc">Saïd Hamdine. Un matin comme les autres.</div>
+  <div class="subt"><span style="--d:3.6s;animation-delay:.5s">Amine repasse au QG. À l'accueil, un jeune homme attend, un dossier à la main.</span><span style="--d:3.4s;position:absolute;left:0;right:0;top:0;animation-delay:4.3s">« Trois jours ? Alors on commence maintenant. »</span></div></div>
+ <!-- 23 : titre -->
+ <div class="scn" data-d="7" id="finalsc"><div class="rays5"></div><div class="z"><div class="lbl" style="font:700 13px MR;letter-spacing:.5em;color:#6cc4ec;opacity:0">Cette histoire est une fiction. Les services, eux, sont réels.</div><div class="big" style="margin-top:16px;animation-delay:.6s">Votre histoire<br><span class="met">commence ici.</span></div></div></div>
+ <!-- 24 : fin -->
+ <div class="scn end" data-d="999" id="endsc"><div class="z"><img src="img/logo-light.png" alt="Initiative Academy" style="width:min(70vw,420px);margin:0 auto;opacity:0;animation:fi 1.2s .4s forwards"><div class="cred" style="margin-top:22px;animation:fi 1s 1.2s forwards">Saïd Hamdine · Alger · Lun — Ven 08 h — 20 h</div>
+  <div class="row"><a class="btn ult" href="rendez-vous.html">Prendre rendez-vous</a><button class="btn line" type="button" id="tosite">Découvrir le site ↓</button><button class="btn line" type="button" id="again">↺ Revoir le film</button></div></div></div>
+ <div id="ctl"><button type="button" id="pp">❚❚ Pause</button><button type="button" id="mu">🔊</button><div class="pg" id="pg"><i></i></div><button type="button" id="skip">Passer le film ⏭</button></div>
+</div>
+<div id="hdr"></div><main id="site">
+<section class="s1" style="height:auto;min-height:80svh"><div class="ph"><img id="s1i" alt="Initiative Academy"></div>
+ <div class="in" style="padding:160px 0 100px"><span class="chap" style="justify-content:center">Initiative Academy · Saïd Hamdine</span><h1 style="margin-top:20px"><span class="met">Votre histoire</span><br>commence ici.</h1>
+ <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px"><a class="btn ult" href="rendez-vous.html">Prendre rendez-vous</a><a class="btn line" href="#svc5">Découvrir nos services</a></div></div></section>
+<section id="svc5"><div class="wrap"><div class="shead"><div><span class="chap">Nos services</span><h2 style="margin-top:14px;font-size:clamp(36px,4.6vw,64px)">Cinq forces, <span class="met">un seul QG</span>.</h2></div><p class="lead">Tout ce dont vous avez besoin pour créer, développer et faire grandir votre activité.</p></div><div class="squad" id="sq"></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="shead"><div><span class="chap">Services aux entreprises</span><h2 style="margin-top:14px;font-size:clamp(36px,4.6vw,64px)">Vos missions, <span class="met">accomplies</span>.</h2></div></div><div class="mis" id="mis"></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="shead"><div><span class="chap">Formations</span><h2 style="margin-top:14px;font-size:clamp(36px,4.6vw,64px)">Montez <span class="met">en puissance</span>.</h2></div><a class="btn line" href="formations.html">Toutes les formations →</a></div><div class="rail" id="rail"></div></div></section>
+<section class="final"><div class="rg"></div><div class="rg"></div><div class="rg"></div><div class="wrap" style="position:relative"><span class="code">Prêt ?</span><h2 style="margin:18px 0 22px">Rejoignez <span class="met">l'équipe</span>.</h2><p class="lead" style="margin:0 auto 32px">Prenez rendez-vous pour visiter nos espaces et découvrir l'offre qui correspond à votre projet.</p>
+ <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn ult" href="rendez-vous.html">Prendre rendez-vous</a><a class="btn line" id="ctel"></a></div><p class="tovalid" style="margin-top:30px"><i></i>Chiffres à valider par l'administration d'Initiative Academy</p></div></section>
+</main><div id="ftr"></div>
+<button class="replay" id="replay" type="button">↺ Revoir le film</button>
+<script src="data.js"></script><script src="core.js"></script><script src="fx.js"></script><script src="sfx.js"></script>
+<script>
+document.querySelectorAll('[data-ph]').forEach(i=>i.src=PH[i.dataset.ph]);document.getElementById('s1i').src=PH.hall;
+const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel;
+// contenu du site
+const SL={coworking:'service.html?s=coworking',formations:'formations.html',domiciliation:'service.html?s=domiciliation',bureaux:'service.html?s=bureaux',incubateur:'service.html?s=incubateur'};
+document.getElementById('sq').innerHTML=SERV.map((s,i)=>'<a class="holo rv" href="'+SL[s[0]]+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><span class="gl"></span><span class="bd"></span><span class="code">Unité IA-0'+(i+1)+'</span><h3 style="margin-top:8px">'+s[1]+'</h3><p>'+s[2]+'</p></a>').join('');
+document.getElementById('mis').innerHTML=[['creation',"Création d'entreprise & assistance à la création","Forme juridique, codes d'activité CNRC, registre du commerce, NIF, NIS, CASNOS : jusqu'à l'immatriculation."],['domiciliation',"Domiciliation d'entreprise","Une adresse légale et fiscale à Alger, avec attestation pour le registre du commerce."],['boite','Boîte postale','Réception de votre courrier, notification à chaque arrivée et retrait quand vous voulez.'],['assistance','Assistance administrative','Coursier administratif, déclarations, formalités et démarches CASNOS.']].map((m,i)=>'<a class="mi3 rv" href="service.html?s='+m[0]+'"><span class="n">0'+(i+1)+'</span><h3>'+m[1]+'</h3><p>'+m[2]+'</p><span class="go">En savoir plus →</span></a>').join('');
+document.getElementById('rail').innerHTML=F.map(f=>'<a class="rc" href="formation.html?f='+f[0]+'"><span class="code">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="m"><span>'+(FD[f[0]]?FD[f[0]].duree.split(' (')[0].split(' +')[0]:'Groupe de 15 max.')+'</span><span>Découvrir →</span></div></a>').join('');
+document.querySelectorAll('.holo').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.transform='rotateY('+((x-.5)*12)+'deg) rotateX('+((.5-y)*10)+'deg)';c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%')});c.addEventListener('pointerleave',()=>c.style.transform='')});
+// ---------- moteur du film ----------
+const film=document.getElementById('film'),SC=[...film.querySelectorAll('.scn')],fx=FX(document.getElementById('vfx'),{shake:film});
+const starts=[];let acc=0;SC.forEach(s=>{starts.push(acc);acc+=+s.dataset.d});const TOTAL=starts[SC.length-1];
+const pg=document.getElementById('pg');starts.slice(1,-1).forEach(t=>{const e=document.createElement('em');e.style.left=(t/TOTAL*100)+'%';pg.appendChild(e)});
+let el=0,playing=false,cur=-1,last=0,fired=new Set();
+const EV=[]; const at=(t,fn)=>EV.push({t,fn});
+const S=i=>starts[i];
+// sons et effets synchronisés
+at(S(0)+.2,()=>SFX.whoosh());at(S(1)+.2,()=>SFX.whoosh());
+at(S(2),()=>{SFX.music.start();SFX.music.set('calm');rainOn=true});
+at(S(4)+.5,()=>SFX.whoosh());at(S(4)+2.1,()=>SFX.whoosh());at(S(4)+4.1,()=>SFX.whoosh());at(S(4)+5.9,()=>SFX.whoosh());
+at(S(5),()=>{rainOn=false;SFX.music.set('tension');SFX.music.pulse(1)});
+at(S(6),()=>storm());at(S(6)+2.4,()=>{const[W,H]=fx.size();fx.bolt(W*.2,-10,W*.45,H*.6,2.6);SFX.thunder()});at(S(6)+5,()=>{const[W,H]=fx.size();fx.bolt(W*.85,-10,W*.6,H*.7,3);SFX.thunder()});
+at(S(7),()=>{SFX.music.set('calm')});at(S(7)+.4,()=>SFX.whoosh());
+at(S(7)+7.2,()=>{SFX.music.stop();SFX.rise(1.4)});
+at(S(8),()=>{SFX.music.start();SFX.music.set('epic');const[W,H]=fx.size();fx.boom(W/2,H/2,1.6);SFX.boom(1.2)});
+at(S(9),()=>SFX.music.set('calm'));
+at(S(10)+.4,()=>SFX.whoosh());at(S(11)+.8,()=>SFX.whoosh());at(S(11)+3.6,()=>SFX.whoosh());
+at(S(13),()=>{SFX.music.set('tension');SFX.music.pulse(1)});
+at(S(14),()=>SFX.music.set('calm'));at(S(14)+6.7,()=>SFX.music.stop());
+at(S(15)+.8,()=>SFX.rise(1.2));
+at(S(16),()=>{SFX.music.start();SFX.music.set('epic');const[W,H]=fx.size();fx.boom(W/2,H*.45,1.4);SFX.boom(1.1)});
+for(let k=0;k<4;k++)at(S(17+k)+.05,()=>{SFX.whoosh();const[W,H]=fx.size();fx.bolt(fx.rnd(0,W),-10,fx.rnd(W*.3,W*.7),H*.5,1.6)});
+at(S(21)+1,()=>{const[W,H]=fx.size();fx.boom(W/2,H*.5,1);SFX.boom(.8)});
+at(S(22),()=>SFX.music.set('calm'));
+at(S(23)+.5,()=>{const[W,H]=fx.size();fx.boom(W/2,H*.45,1.8);SFX.boom(1.3);SFX.music.set('epic')});
+at(S(24)+2,()=>{SFX.music.set('calm')});
+function enter(i){SC.forEach((s,k)=>s.classList.toggle('on',k===i));cur=i}
+function tick(now){requestAnimationFrame(tick);const dt=Math.min((now-last)/1000,.1);last=now;if(!playing)return;el+=dt;
+ let i=0;while(i<SC.length-1&&el>=starts[i+1])i++;if(i!==cur)enter(i);
+ EV.forEach((e,k)=>{if(!fired.has(k)&&el>=e.t){fired.add(k);e.fn()}});
+ pg.firstChild.style.width=Math.min(el/TOTAL*100,100)+'%';if(el>=TOTAL&&!film.dataset.done){film.dataset.done=1;document.getElementById('ctl').style.display='none'}}
+requestAnimationFrame(t=>{last=t;tick(t)});
+// pluie
+const rc=document.getElementById('rain'),rg=rc.getContext('2d');let rainOn=false,drops=[];
+(function rl(){requestAnimationFrame(rl);const W=rc.width=rc.clientWidth,H=rc.height=rc.clientHeight;if(!rainOn||!playing){if(!rainOn)rg.clearRect(0,0,W,H);return}
+ while(drops.length<220)drops.push({x:Math.random()*W*1.2,y:Math.random()*-H,v:12+Math.random()*10});rg.strokeStyle='rgba(170,210,240,.35)';rg.lineWidth=1;rg.beginPath();
+ drops.forEach(d=>{d.y+=d.v;d.x-=d.v*.25;if(d.y>H){d.y=-20;d.x=Math.random()*W*1.2}rg.moveTo(d.x,d.y);rg.lineTo(d.x+3,d.y-14)});rg.stroke()})();
+// tempête de papiers
+function storm(){const sc=document.getElementById('storm'),W=innerWidth,H=innerHeight;sc.querySelectorAll('.paper,.fword').forEach(n=>n.remove());
+ const words=['Registre du commerce ?','NIF ?','NIS ?','CASNOS ?','Adresse du siège ?','Statuts ?','Déclarations ?','Bureau ?','Jeudi 10 h.'];
+ for(let i=0;i<34;i++){const p=document.createElement('div');p.className='paper';sc.appendChild(p);const sx=Math.random()*W,sy=H+80,ex=Math.random()*W,ey=-120;
+  p.animate([{transform:`translate(${sx}px,${sy}px) rotate(0deg)`},{transform:`translate(${(sx+ex)/2+(Math.random()-.5)*300}px,${H/2}px) rotate(${Math.random()*720}deg)`},{transform:`translate(${ex}px,${ey}px) rotate(${Math.random()*1440}deg)`}],{duration:2600+Math.random()*2800,delay:Math.random()*2600,easing:'cubic-bezier(.3,0,.7,1)',fill:'both'})}
+ words.forEach((w,i)=>{const f=document.createElement('div');f.className='fword';f.textContent=window.I18N_T?I18N_T(w):w;sc.appendChild(f);const x=Math.random()*(W-260)+20,y=H*.18+Math.random()*H*.6;
+  f.animate([{transform:`translate(${x}px,${y}px) scale(.4)`,opacity:0},{opacity:1,offset:.2},{transform:`translate(${x+(Math.random()-.5)*160}px,${y-60}px) scale(1.1)`,opacity:0}],{duration:2600,delay:400+i*650,fill:'both'})})}
+// contrôles
+const pp=document.getElementById('pp'),mu=document.getElementById('mu');
+function play(){playing=true;film.classList.remove('paused');pp.textContent='❚❚ Pause';fx.setRun(true);if(SFX._ctx())SFX._ctx().resume()}
+function pause(){playing=false;film.classList.add('paused');pp.textContent='▶ Lecture';fx.setRun(false);if(SFX._ctx())SFX._ctx().suspend()}
+pp.onclick=()=>playing?pause():play();
+mu.onclick=()=>{if(SFX.on){SFX.music.stop();SFX.disable();mu.textContent='🔇'}else{SFX.enable();mu.textContent='🔊';SFX.music.start()}};
+function closeFilm(){playing=false;SFX.music&&SFX.music.stop();fx.setRun(false);film.classList.add('gone');document.body.style.overflow='';try{sessionStorage.setItem('ia_v6',1)}catch(e){}}
+document.getElementById('skip').onclick=()=>{el=TOTAL;fired=new Set(EV.map((e,k)=>k));enter(SC.length-1);SFX.music.stop();film.dataset.done=1;document.getElementById('ctl').style.display='none'};
+document.getElementById('tosite').onclick=closeFilm;
+function restart(){film.classList.remove('gone');document.body.style.overflow='hidden';delete film.dataset.done;document.getElementById('ctl').style.display='';el=0;cur=-1;fired=new Set();SC.forEach(s=>s.classList.remove('on'));document.getElementById('gate5')?.remove();scrollTo(0,0);play()}
+document.getElementById('again').onclick=restart;document.getElementById('replay').onclick=()=>{if(!SFX.on&&confirm('Revoir le film avec le son ?')){SFX.enable();mu.textContent='🔊'}restart()};
+const startFilm=snd=>{if(snd){SFX.enable();mu.textContent='🔊'}else mu.textContent='🔇';document.getElementById('gate5').remove();play()};
+document.getElementById('g5s').onclick=()=>startFilm(true);document.getElementById('g5n').onclick=()=>startFilm(false);
+document.getElementById('g5k').onclick=e=>{e.preventDefault();closeFilm()};
+let seen5=false;try{seen5=sessionStorage.getItem('ia_v6')}catch(e){}
+if(seen5){film.classList.add('gone');film.style.transition='none'}else document.body.style.overflow='hidden';
+addEventListener('keydown',e=>{if(film.classList.contains('gone'))return;if(e.code==='Space'){e.preventDefault();playing?pause():play()}if(e.key==='Escape')closeFilm()});
+reveal();
+</script><script src="i18n.js"></script></body></html>
