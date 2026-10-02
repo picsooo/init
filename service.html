@@ -31,4 +31,4 @@ document.getElementById('pour').innerHTML=d.pour.map(x=>'<span>'+x+'</span>').jo
 const tl=document.getElementById('tl');tl.href='tel:'+CO.telh;tl.textContent=CO.tel;
 document.getElementById('oth').innerHTML=SORDER.filter(x=>x!==k).slice(0,5).map(x=>'<a class="s2" href="service.html?s='+x+'"><img src="'+SD[x].img+'" alt="" loading="lazy"><div><small>'+SD[x].grp+'</small><h3>'+SD[x].t+'</h3></div></a>').join('');
 document.getElementById('contact').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée !')};reveal();
-</script></body></html>
+</script><script src="i18n.js"></script></body></html>

@@ -37,4 +37,4 @@ const facts=[['Durée',d?d.duree:'Sur demande'],['Niveau',d?d.niveau:'Tous nivea
 if(d&&d.prereq)facts.push(['Prérequis',d.prereq]);if(d&&d.certif)facts.push(['Certification',d.certif]);else facts.push(['Certification','Attestation de formation']);
 document.getElementById('facts').innerHTML='<h2 style="font-size:22px">Informations</h2><dl class="dl">'+facts.map(x=>'<dt>'+x[0]+'</dt><dd>'+x[1]+'</dd>').join('')+'</dl>';
 document.getElementById('ins').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée !')};reveal();
-</script></body></html>
+</script><script src="i18n.js"></script></body></html>

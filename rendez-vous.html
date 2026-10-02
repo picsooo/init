@@ -24,4 +24,4 @@ document.getElementById('sl').innerHTML=['09:00','10:30','12:00','14:00','15:30'
 const d=new Date();d.setDate(d.getDate()+1);document.getElementById('dt').min=d.toISOString().slice(0,10);
 const t1=document.getElementById('t1');t1.href='tel:'+CO.telh;t1.textContent=CO.tel;const m1=document.getElementById('m1');m1.href='mailto:'+CO.mail;m1.textContent=CO.mail;
 document.getElementById('rf').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée ! Nous vous rappelons.')};reveal();
-</script></body></html>
+</script><script src="i18n.js"></script></body></html>
