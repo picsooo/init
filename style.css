@@ -150,3 +150,6 @@ header.top nav{display:flex;gap:4px;font-weight:600;font-size:14.5px}header.top 
 @media (max-width:1050px){.hr .lang{display:inline-flex}}
 html[lang=en] .hero h1{font-size:clamp(44px,6.2vw,96px)}
 
+.vswitch-w{position:fixed;z-index:90;bottom:calc(46px + env(safe-area-inset-bottom,0px));left:16px}.vswitch-w .vswitch{position:static;border:0;cursor:pointer;text-align:left}
+.vmenu{position:absolute;bottom:calc(100% + 10px);left:0;background:#fff;border-radius:18px;padding:8px;display:grid;gap:2px;min-width:220px;box-shadow:0 30px 60px -20px rgba(6,18,43,.6);opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s}
+.vswitch-w.open .vmenu{opacity:1;pointer-events:auto;transform:none}.vmenu a{padding:11px 14px;border-radius:12px;font-weight:700;font-size:14.5px;color:var(--n)}.vmenu a:hover{background:var(--ice)}.vmenu a.on{background:var(--n);color:#fff}
