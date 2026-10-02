@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#06122b">
+<link rel="stylesheet" href="style.css">
+<title>Galerie — Initiative Academy</title></head><body>
+<div id="hdr"></div><main>
+<section class="page-h"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 8 188 192h-40L100 88 52 192H12z" fill="#fff"/><path d="M60 140h96l-14 22H46z" fill="#5b9bff"/></svg><div class="wrap" style="position:relative;z-index:2"><span class="kick" style="color:#5b9bff">Galerie</span><h1 style="margin-top:16px">Nos <b>espaces</b>.</h1><p class="lead">800 m² pensés pour travailler, apprendre et se rencontrer.</p></div></section>
+<section><div class="wrap"><div class="gal" id="gal"></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="cband rv"><img class="bgi" alt="" id="cbg"><span class="kick" style="color:#5b9bff">Visite</span><h2 style="margin-top:14px">Prêt à rejoindre<br><em style="color:#5b9bff">Initiative Academy</em> ?</h2><p class="lead">Prenez rendez-vous pour visiter nos espaces et découvrir l'offre qui correspond à votre projet.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn b" href="rendez-vous.html">Prendre rendez-vous</a><a class="btn o" id="ctel"></a></div></div></div></section>
+</main><div class="lb" id="lb"><button type="button" aria-label="Fermer">✕</button><img alt=""></div><div id="ftr"></div>
+<script src="data.js"></script><script src="core.js"></script>
+<script>
+const G=[[PH.hall,'Hall d\'entrée'],[PH.form2,'Salle de formation'],[PH.bureaux,'Bureaux privatifs'],[PH.form1,'Espace formation'],[PH.hall2,'Accueil'],[PH.dom,'Espace domiciliation']];
+document.getElementById('gal').innerHTML=G.map(g=>'<a href="'+g[0]+'" class="rv"><img src="'+g[0]+'" alt="'+g[1]+'" loading="lazy"><span>'+g[1]+'</span></a>').join('');
+const lb=document.getElementById('lb');document.getElementById('gal').onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();lb.querySelector('img').src=a.href;lb.classList.add('open')};lb.onclick=()=>lb.classList.remove('open');
+document.getElementById('cbg').src=PH.hall2;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel; reveal();
+</script></body></html>

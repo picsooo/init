@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#06122b">
+<link rel="stylesheet" href="style.css">
+<title>Initiative Academy — Coworking, formations et domiciliation à Alger</title>
+<meta name="description" content="Initiative Academy, hub professionnel à Saïd Hamdine, Alger : coworking, formations, domiciliation, bureaux privatifs et incubateur.">
+</head><body>
+<div id="hdr"></div><main>
+<section class="hero"><div class="bg"><img id="hbg" alt="Hall d'entrée d'Initiative Academy"></div><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 8 188 192h-40L100 88 52 192H12z" fill="#fff"/><path d="M60 140h96l-14 22H46z" fill="#5b9bff"/></svg>
+ <div class="wrap in"><div>
+  <span class="kick" style="color:#5b9bff">Saïd Hamdine · Alger</span>
+  <h1 style="margin-top:18px">L'écosystème qui<br><b>propulse</b> votre <span class="rot" id="rot">projet</span>.</h1>
+  <p class="lead">Coworking, formations, domiciliation, bureaux privatifs et incubateur : un hub professionnel complet pour chaque étape de votre développement.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn b" href="rendez-vous.html">Visiter les espaces</a><a class="btn o" href="#espaces">Découvrir nos services</a></div></div>
+  <div class="hstats"><div><b data-n="500">0</b><span>membres actifs</span></div><div><b data-n="50">0</b><span>formations</span></div><div><b data-n="100">0</b><span>entreprises</span></div><div><b data-n="800" data-s=" m²">0</b><span>d'espaces</span></div></div>
+ </div></section>
+
+<section><div class="wrap about">
+ <div class="ph rv"><img id="abimg" alt="Salle de formation"><div class="chip"><b>800 m²</b><span style="font-size:13px;font-weight:700;color:var(--mut)">au cœur d'Alger</span></div></div>
+ <div class="rv"><span class="kick">À propos</span><h2 style="margin-top:16px">Un hub pensé pour <em>les entrepreneurs</em>.</h2>
+  <p class="lead" style="margin-top:20px">Initiative Academy est un hub professionnel complet, situé à Saïd Hamdine, Alger, conçu pour accompagner chaque entrepreneur à chaque étape de son développement.</p>
+  <ul class="checks"><li>Espace moderne et entièrement équipé</li><li>Communauté d'entrepreneurs dynamiques</li><li>Services professionnels intégrés</li><li>Localisation stratégique au cœur d'Alger</li></ul>
+  <a class="btn b" href="a-propos.html">Qui sommes-nous</a></div>
+</div></section>
+
+<section id="espaces" style="padding-top:0"><div class="wrap">
+ <div class="shead"><div><span class="kick">Nos services</span><h2 style="margin-top:14px">Un écosystème <em>complet</em>.</h2></div><p class="lead">Tout ce dont vous avez besoin pour créer, développer et faire grandir votre activité.</p></div>
+ <div class="svc" id="svc"></div></div></section>
+
+<section class="dark"><div class="wrap">
+ <div class="shead"><div><span class="kick" style="color:#5b9bff">Équipements</span><h2 style="margin-top:14px">Tout est <em style="color:#5b9bff">inclus</em>.</h2></div><p class="lead">Des équipements premium pour travailler dans les meilleures conditions.</p></div>
+ <div class="eq" id="eq"></div></div></section>
+
+<section><div class="wrap">
+ <div class="shead"><div><span class="kick">Formations</span><h2 style="margin-top:14px">Formez-vous avec<br><em>les meilleurs experts</em>.</h2></div><a class="btn o" href="formations.html">Toutes les formations →</a></div>
+ <div class="fgrid" id="fprev"></div></div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <div class="shead"><div><span class="kick">Galerie</span><h2 style="margin-top:14px">Un cadre <em>d'exception</em>.</h2></div><a class="btn o" href="galerie.html">Voir la galerie →</a></div>
+ <div class="gal" id="gal"></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="cband rv"><img class="bgi" alt="" id="cbg"><span class="kick" style="color:#5b9bff">Visite</span><h2 style="margin-top:14px">Prêt à rejoindre<br><em style="color:#5b9bff">Initiative Academy</em> ?</h2><p class="lead">Prenez rendez-vous pour visiter nos espaces et découvrir l'offre qui correspond à votre projet.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn b" href="rendez-vous.html">Prendre rendez-vous</a><a class="btn o" id="ctel"></a></div></div></div></section>
+</main><div id="ftr"></div>
+<script src="data.js"></script><script src="core.js"></script>
+<script>
+document.getElementById('hbg').src=PH.hall;document.getElementById('abimg').src=PH.form1;
+const W=['projet','startup','carrière','entreprise'];let wi=0;setInterval(()=>{wi=(wi+1)%W.length;const r=document.getElementById('rot');r.style.opacity=0;setTimeout(()=>{r.textContent=W[wi];r.style.opacity=1},300)},2600);document.getElementById('rot').style.transition='opacity .3s';
+document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n,s=el.dataset.s||'+';let t0=null;const st=t=>{t0=t0||t;const p=Math.min((t-t0)/1600,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p===1?s:'');if(p<1)requestAnimationFrame(st)};setTimeout(()=>requestAnimationFrame(st),500)});
+document.getElementById('svc').innerHTML=SERV.map((s,i)=>'<article class="sc rv" id="'+s[0]+'" tabindex="0"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><span class="num">0'+(i+1)+'</span><h3><small>'+s[1]+'</small>'+s[2]+'</h3><ul>'+s[4].map(x=>'<li>'+x+'</li>').join('')+'</ul></article>').join('');
+document.getElementById('eq').innerHTML=EQUIP.map(e=>'<div class="rv">'+icon(e[0])+'<h3>'+e[1]+'</h3><p>'+e[2]+'</p></div>').join('');
+document.getElementById('fprev').innerHTML=['chatgpt','negociation','loi','initmkt','accueil','formateur'].map(k=>{const f=F.find(x=>x[0]===k);return '<a class="fc rv" href="formation.html?f='+k+'" style="--c:'+CAT[f[2]][1]+'"><span class="tg">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="meta"><span>Groupe de 15 max.</span><span>Découvrir →</span></div></a>'}).join('');
+document.getElementById('gal').innerHTML=[[PH.hall,'Hall d\'entrée'],[PH.form2,'Salle de formation'],[PH.bureaux,'Bureaux privatifs']].map(g=>'<a href="galerie.html"><img src="'+g[0]+'" alt="'+g[1]+'" loading="lazy"><span>'+g[1]+'</span></a>').join('');
+document.getElementById('cbg').src=PH.hall2;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel; reveal();
+</script></body></html>

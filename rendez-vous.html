@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#06122b">
+<link rel="stylesheet" href="style.css">
+<title>Prendre rendez-vous — Initiative Academy</title></head><body>
+<div id="hdr"></div><main>
+<section class="page-h"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 8 188 192h-40L100 88 52 192H12z" fill="#fff"/><path d="M60 140h96l-14 22H46z" fill="#5b9bff"/></svg><div class="wrap" style="position:relative;z-index:2"><span class="kick" style="color:#5b9bff">Rendez-vous</span><h1 style="margin-top:16px">Visitez <b>nos espaces</b>.</h1><p class="lead">Choisissez le service qui vous intéresse et le moment qui vous convient. Notre équipe vous confirme le rendez-vous par téléphone.</p></div></section>
+<section><div class="wrap rdv">
+ <div class="rv"><h2 style="font-size:clamp(30px,3.4vw,44px)">Nous rencontrer</h2>
+  <div class="info"><div>📍<span><b>Adresse</b>Saïd Hamdine, Alger, Algérie</span></div><div>☎<span><b>Téléphone</b><a id="t1"></a></span></div><div>✉<span><b>E-mail</b><a id="m1"></a></span></div><div>🕓<span><b>Horaires</b>Lun — Ven : 08 h — 20 h<br>Sam — Dim : sur rendez-vous</span></div></div></div>
+ <form class="f rv" id="rf">
+  <div class="full"><label style="margin-bottom:8px">Je suis intéressé(e) par</label><div class="opts" id="svo"></div></div>
+  <label>Nom complet<input required autocomplete="name"></label><label>Téléphone<input type="tel" required autocomplete="tel"></label>
+  <label>E-mail<input type="email"></label><label>Date souhaitée<input type="date" id="dt" required></label>
+  <div class="full"><label style="margin-bottom:8px">Créneau</label><div class="opts slots" id="sl"></div></div>
+  <label class="full">Message<textarea placeholder="Votre projet, nombre de personnes, besoins particuliers…"></textarea></label>
+  <button class="btn b" type="submit">Confirmer ma demande de rendez-vous</button></form>
+</div></section>
+</main><div id="ftr"></div>
+<script src="data.js"></script><script src="core.js"></script>
+<script>
+const pre=new URLSearchParams(location.search).get('s')||'coworking';
+document.getElementById('svo').innerHTML=SERV.map(s=>'<label><input type="radio" name="sv" value="'+s[0]+'"'+(s[0]===pre?' checked':'')+'><span>'+s[1]+'</span></label>').join('');
+document.getElementById('sl').innerHTML=['09:00','10:30','12:00','14:00','15:30','17:00','18:30','19:30'].map((h,i)=>'<label><input type="radio" name="sl" value="'+h+'"'+(i===1?' checked':'')+'><span>'+h+'</span></label>').join('');
+const d=new Date();d.setDate(d.getDate()+1);document.getElementById('dt').min=d.toISOString().slice(0,10);
+const t1=document.getElementById('t1');t1.href='tel:'+CO.telh;t1.textContent=CO.tel;const m1=document.getElementById('m1');m1.href='mailto:'+CO.mail;m1.textContent=CO.mail;
+document.getElementById('rf').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée ! Nous vous rappelons.')};reveal();
+</script></body></html>
