@@ -123,3 +123,6 @@ header.top nav{display:flex;gap:4px;font-weight:600;font-size:14.5px}header.top 
 .steps2{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}.steps2 div{border:1px solid var(--line);border-radius:22px;padding:26px;counter-increment:s}.steps2 div::before{content:"0" counter(s);font:300 40px Sora;color:var(--b)}.steps2 h3{font-size:21px;margin:10px 0 6px}.steps2 p{color:var(--mut);font-size:15px}
 @media (max-width:1050px){.h2c{grid-template-columns:1fr}.sv2{grid-template-columns:1fr 1fr}.band{grid-template-columns:1fr 1fr;gap:20px}.steps2{grid-template-columns:1fr}}
 @media (max-width:620px){.sv2{grid-template-columns:1fr}.h2c .pic .card{left:10px}}
+.tovalid{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:700 12.5px MR;color:#b45309;background:#fff7e6;border:1px solid #f5c26b;border-radius:999px;padding:6px 12px 6px 9px}
+.tovalid i{width:9px;height:9px;border-radius:50%;background:#f59e0b;position:relative;flex:none}.tovalid i::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid #f59e0b;animation:ping 1.6s ease-out infinite}
+.tovalid.lt{background:rgba(245,158,11,.15);color:#ffd28a;border-color:rgba(245,194,107,.5)}
