@@ -14,8 +14,8 @@
 .cred{font:600 clamp(12px,1.4vw,16px) MR;letter-spacing:.6em;text-transform:uppercase;color:#cfe9f8;opacity:0}
 .cred b{display:block;margin-top:12px;font:600 clamp(24px,3.4vw,44px) Sora;letter-spacing:.24em;color:#fff}
 .scn.on .cred{animation:crd 4.6s ease forwards}
-.loc{position:absolute;left:clamp(20px,6vw,90px);top:12vh;z-index:6;font:600 clamp(14px,1.5vw,19px) "Courier New",monospace;letter-spacing:.18em;color:#fff;text-transform:uppercase;white-space:nowrap;clip-path:inset(0 100% 0 0);border-right:2px solid #6cc4ec;padding-right:4px}
-.scn.on .loc{animation:type 1.6s steps(28) .6s forwards,blink .8s step-end infinite}
+.loc{position:absolute;left:clamp(20px,6vw,90px);top:12vh;z-index:6;font:600 clamp(14px,1.5vw,19px) "Courier New",monospace;letter-spacing:.18em;color:#fff;text-transform:uppercase;white-space:nowrap;border-right:2px solid #6cc4ec;padding-right:4px;min-height:1.4em}
+.scn.on .loc{animation:blink .8s step-end infinite}
 @keyframes type{to{clip-path:inset(0 0 0 0)}}@keyframes blink{50%{border-color:transparent}}
 .subt{position:absolute;left:50%;bottom:13vh;transform:translateX(-50%);z-index:6;width:min(92vw,900px);text-align:center;font:500 clamp(16px,1.7vw,23px)/1.45 MR;color:#fff;text-shadow:0 2px 8px #000,0 0 2px #000}
 .subt span{display:block;opacity:0}.scn.on .subt span{animation:sub var(--d,3s) ease forwards}
