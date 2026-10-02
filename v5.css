@@ -64,3 +64,22 @@
 .phone .av{width:70px;height:70px;border-radius:50%;margin:0 auto;background:linear-gradient(145deg,#239bd2,#0b3a8c);display:grid;place-items:center;font:600 26px Sora;animation:pulse2 1.2s infinite}
 @keyframes pulse2{50%{box-shadow:0 0 0 14px rgba(35,155,210,.25)}}
 .phone .acc{margin-top:18px;background:#2fd36a;color:#fff;border-radius:999px;padding:10px 22px;display:inline-block;font-weight:700}
+/* personnages */
+.stage{position:absolute;inset:0;z-index:5;pointer-events:none}
+.ch{position:absolute;transform-origin:bottom center}.ch .tag{position:absolute;left:50%;transform:translateX(-50%);bottom:-28px;font:700 11px MR;letter-spacing:.2em;color:#6cc4ec;text-transform:uppercase;white-space:nowrap}
+.ch .bob{animation:breathe 3.2s ease-in-out infinite;transform-origin:100px 290px}@keyframes breathe{50%{transform:translateY(-3px)}}
+.ch .lids rect{transform-origin:center;transform:scaleY(0);animation:blink 4.6s infinite}@keyframes blink{0%,94%,100%{transform:scaleY(0)}97%{transform:scaleY(1)}}
+.ch.talk2 .mouth{opacity:0}.ch.talk2 .mouthO{animation:talk .28s steps(2) infinite}@keyframes talk{0%{opacity:1;transform:scaleY(1)}100%{opacity:1;transform:scaleY(.3)}}
+.ch .mouthO{transform-origin:100px 86px}
+.ch .hands{animation:typing .22s steps(2) infinite;transform-origin:100px 166px}@keyframes typing{to{transform:translateY(-4px)}}
+.ch.walk .l1{animation:leg1 .6s ease-in-out infinite;transform-origin:89px 214px}.ch.walk .l2{animation:leg2 .6s ease-in-out infinite;transform-origin:111px 214px}
+@keyframes leg1{0%,100%{transform:rotate(22deg)}50%{transform:rotate(-22deg)}}@keyframes leg2{0%,100%{transform:rotate(-22deg)}50%{transform:rotate(22deg)}}
+.ch .arm-w{animation:wave 1s ease-in-out infinite}@keyframes wave{50%{transform:rotate(-18deg)}}
+.ch.walkx{animation:walkx 6s linear forwards}@keyframes walkx{from{left:-20%}to{left:70%}}
+.ch.enter{animation:enterx 1.4s cubic-bezier(.2,.8,.2,1) forwards}@keyframes enterx{from{transform:translateX(-60vw)}to{transform:none}}
+.ch.enterR{animation:enterR 1.4s cubic-bezier(.2,.8,.2,1) forwards}@keyframes enterR{from{transform:translateX(60vw) scaleX(-1)}to{transform:scaleX(-1)}}
+.prop{position:absolute;z-index:4}.prop.lamp{z-index:3}
+.scn .stage .ch{opacity:0}.scn.on .stage .ch{opacity:1;transition:opacity .6s .3s}
+.teamline{position:absolute;left:0;right:0;bottom:6%;z-index:5;display:flex;justify-content:center;align-items:flex-end;gap:0}
+.teamline .ch{position:relative;left:auto;bottom:auto;margin:0 -6px;width:clamp(90px,11vw,170px)!important}
+@media (max-width:620px){.ch{width:120px!important}.prop{display:none}}
