@@ -1,6 +1,6 @@
 const IMG='https://initiativeacademy.dz/wp-content/uploads/';
 const PH={logo:IMG+'2026/06/ia-logo-v2.png',hall:IMG+'2026/08/hall-dentree01.jpeg',hall2:IMG+'2026/08/hall-dentree.jpeg',form1:IMG+'2026/08/salle-de-formation-01.jpeg',form2:IMG+'2026/08/salle-de-formation-02.jpeg',bureaux:IMG+'2026/08/Bureaux-privatifs.jpeg',dom:IMG+'2026/06/ia-domiciliation-room.jpg'};
-const CO={tel:'0770 690 796',telh:'+213770690796',mail:'contact@initiativeacademy.dz',adr:'Saïd Hamdine, Alger, Algérie',fb:'https://www.facebook.com/initiativeacademy.dz',ig:'https://www.instagram.com/initiativeacademy.dz',li:'https://www.linkedin.com/company/initiativeacademy'};
+const CO={tel:'0798 276 563',telh:'+213798276563',mail:'contact@initiativeacademy.dz',adr:'Saïd Hamdine, Alger, Algérie',fb:'https://www.facebook.com/initiativeacademy.dz',ig:'https://www.instagram.com/initiativeacademy.dz',li:'https://www.linkedin.com/company/initiativeacademy'};
 const SERV=[
 ['coworking','Coworking','Un espace de travail qui vous inspire',PH.form2,['Wi-Fi haut débit sécurisé inclus','Espaces lounge et zones de détente','Accès flexible : journée, semaine, mois']],
 ['formations','Formations','Boostez vos compétences',PH.form1,['Programmes certifiants personnalisés','Formateurs experts de leur domaine','Présentiel et distanciel disponibles','Petits groupes pour un suivi optimal']],
