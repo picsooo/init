@@ -153,3 +153,10 @@ html[lang=en] .hero h1{font-size:clamp(44px,6.2vw,96px)}
 .vswitch-w{position:fixed;z-index:90;bottom:calc(46px + env(safe-area-inset-bottom,0px));left:16px}.vswitch-w .vswitch{position:static;border:0;cursor:pointer;text-align:left}
 .vmenu{position:absolute;bottom:calc(100% + 10px);left:0;background:#fff;border-radius:18px;padding:8px;display:grid;gap:2px;min-width:220px;box-shadow:0 30px 60px -20px rgba(6,18,43,.6);opacity:0;pointer-events:none;transform:translateY(8px);transition:.25s}
 .vswitch-w.open .vmenu{opacity:1;pointer-events:auto;transform:none}.vmenu a{padding:11px 14px;border-radius:12px;font-weight:700;font-size:14.5px;color:var(--n)}.vmenu a:hover{background:var(--ice)}.vmenu a.on{background:var(--n);color:#fff}
+/* cartes simples, côte à côte */
+.svc{grid-template-columns:repeat(5,1fr)}.sc,.sc:nth-child(1),.sc:nth-child(2){grid-column:span 1;min-height:420px}
+.biz{grid-template-columns:repeat(4,1fr)}.bz{min-height:230px}.bz.big,.bz.wide{grid-column:span 1}
+.hstats .lbl3{font:600 clamp(18px,1.6vw,22px)/1.2 Sora;letter-spacing:-.01em;display:block}
+@media (max-width:1050px){.svc{grid-template-columns:1fr 1fr}.biz{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.svc,.biz{grid-template-columns:1fr}}
+.svc .sc{padding:22px}.svc .sc h3{font-size:clamp(17px,1.4vw,21px);line-height:1.15}.svc .sc h3 small{font-size:11px}

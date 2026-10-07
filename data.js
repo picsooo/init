@@ -2,12 +2,12 @@ const IMG='https://initiativeacademy.dz/wp-content/uploads/';
 const PH={logo:IMG+'2026/06/ia-logo-v2.png',hall:IMG+'2026/08/hall-dentree01.jpeg',hall2:IMG+'2026/08/hall-dentree.jpeg',form1:IMG+'2026/08/salle-de-formation-01.jpeg',form2:IMG+'2026/08/salle-de-formation-02.jpeg',bureaux:IMG+'2026/08/Bureaux-privatifs.jpeg',dom:IMG+'2026/06/ia-domiciliation-room.jpg'};
 const CO={tel:'0770 690 796',telh:'+213770690796',mail:'contact@initiativeacademy.dz',adr:'Saïd Hamdine, Alger, Algérie',fb:'https://www.facebook.com/initiativeacademy.dz',ig:'https://www.instagram.com/initiativeacademy.dz',li:'https://www.linkedin.com/company/initiativeacademy'};
 const SERV=[
-['coworking','Coworking','Un espace de travail qui vous inspire',PH.form2,['Wi-Fi haut débit sécurisé inclus','Espaces lounge et zones de détente','Café et thé offerts toute la journée','Accès flexible : journée, semaine, mois']],
+['coworking','Coworking','Un espace de travail qui vous inspire',PH.form2,['Wi-Fi haut débit sécurisé inclus','Espaces lounge et zones de détente','Accès flexible : journée, semaine, mois']],
 ['formations','Formations','Boostez vos compétences',PH.form1,['Programmes certifiants personnalisés','Formateurs experts de leur domaine','Présentiel et distanciel disponibles','Petits groupes pour un suivi optimal']],
 ['domiciliation','Domiciliation','Une adresse professionnelle à Alger',PH.hall2,['Adresse légale et fiscale reconnue','Réception et gestion du courrier','Assistance administrative incluse','Sans engagement, tarifs compétitifs']],
 ['bureaux','Bureaux privatifs','Votre bureau dédié, clé en main',PH.bureaux,['Bureaux de 1 à 10 personnes','Mobilier et équipements premium inclus','Accès sécurisé 24 h/24 et 7 j/7','Contrats flexibles et évolutifs']],
 ['incubateur','Incubateur','Faites grandir votre startup',PH.dom,['Mentorat et accompagnement personnalisé','Réseau d\'experts et d\'investisseurs','Ateliers et workshops spécialisés','Espace de travail dédié à votre projet']]];
-const EQUIP=[['wifi','Wi-Fi haut débit','Connexion fibre optique ultra-rapide et sécurisée dans tout l\'espace.'],['print','Impression gratuite','Imprimante laser et scanner à disposition de tous les membres.'],['sofa','Espaces lounge','Zones de détente confortables pour vos pauses et échanges informels.'],['room','Salles de réunion','Salles équipées réservables pour vos réunions et présentations.'],['cup','Café et thé offerts','Boissons chaudes à volonté pour rester productif toute la journée.'],['lock','Accès sécurisé','Contrôle d\'accès et vidéosurveillance pour votre tranquillité.']];
+const EQUIP=[['wifi','Wi-Fi haut débit','Connexion fibre optique ultra-rapide et sécurisée dans tout l\'espace.'],['print','Impression','Imprimante laser et scanner à disposition de tous les membres.'],['sofa','Espaces lounge','Zones de détente confortables pour vos pauses et échanges informels.'],['room','Salles de réunion','Salles équipées réservables pour vos réunions et présentations.'],['lock','Accès sécurisé','Contrôle d\'accès et vidéosurveillance pour votre tranquillité.']];
 const CAT={vente:['Commercial & vente','#1f6fff'],mkt:['Marketing','#6a5cff'],client:['Accueil & relation client','#00a6c8'],ia:['IA, données & conformité','#0b3a8c'],peda:['Pédagogie','#2f4fd6']};
 const F=[
 ['delegue','Délégué commercial','vente','Les fondamentaux du métier : prospection, présentation de l\'offre, suivi du portefeuille clients et reporting.'],
@@ -67,12 +67,12 @@ F.find(f=>f[0]==='formateur')[3]='Training of Trainers : concevoir, animer et é
 const SD={
 coworking:{t:'Coworking',h:'Un espace de travail qui vous inspire',img:PH.form2,grp:'Espaces',
  intro:'Un poste de travail dans un espace moderne et entièrement équipé, au sein d\'une communauté d\'entrepreneurs, de freelances et de startups. Vous venez quand vous voulez, vous payez ce que vous utilisez.',
- incl:['Wi-Fi haut débit sécurisé inclus','Espaces lounge et zones de détente','Café et thé offerts toute la journée','Impression et scan à disposition','Accès aux salles de réunion sur réservation','Événements et rencontres entre membres'],
+ incl:['Wi-Fi haut débit sécurisé inclus','Espaces lounge et zones de détente','Impression et scan à disposition','Accès aux salles de réunion sur réservation','Événements et rencontres entre membres'],
  formules:[['Journée','Pour une réunion, une journée de travail au calme ou pour essayer l\'espace.'],['Semaine','Pour un projet ponctuel ou une période chargée.'],['Mois','Pour faire d\'Initiative Academy votre bureau au quotidien.']],
  pour:['Freelances et indépendants','Startups et porteurs de projet','Télétravailleurs','Équipes en déplacement à Alger']},
 bureaux:{t:'Bureaux privatifs',h:'Votre bureau dédié, clé en main',img:PH.bureaux,grp:'Espaces',
  intro:'Un bureau fermé rien que pour votre équipe, meublé et équipé, avec tous les services du hub. Vous emménagez et vous travaillez dès le premier jour.',
- incl:['Bureaux de 1 à 10 personnes','Mobilier et équipements premium inclus','Accès sécurisé 24 h/24 et 7 j/7','Contrats flexibles et évolutifs','Wi-Fi, impression, café et thé inclus','Accès aux salles de réunion et aux espaces communs'],
+ incl:['Bureaux de 1 à 10 personnes','Mobilier et équipements premium inclus','Accès sécurisé 24 h/24 et 7 j/7','Contrats flexibles et évolutifs','Wi-Fi et impression inclus','Accès aux salles de réunion et aux espaces communs'],
  formules:[['Bureau individuel','Pour un dirigeant, un consultant ou un professionnel libéral.'],['Bureau d\'équipe','De 2 à 10 postes pour votre équipe.'],['Sur mesure','Une configuration adaptée à votre activité.']],
  pour:['PME et filiales','Startups en croissance','Cabinets et consultants','Entreprises étrangères qui s\'installent à Alger']},
 domiciliation:{t:'Domiciliation d\'entreprise',h:'Une adresse professionnelle à Alger',img:PH.hall2,grp:'Entreprises',
