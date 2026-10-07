@@ -173,3 +173,6 @@ html[lang=en] .hero h1{font-size:clamp(44px,6.2vw,96px)}
 .slide3 .sl3d{position:absolute;left:0;right:0;bottom:16px;z-index:2;display:flex;gap:8px;justify-content:center}
 .slide3 .sl3d button{width:9px;height:9px;border-radius:999px;border:0;padding:0;background:rgba(255,255,255,.55);cursor:pointer;transition:width .3s}
 .slide3 .sl3d button.on{width:26px;background:#fff}
+
+.svc{grid-template-columns:repeat(3,1fr)}.sv2{grid-template-columns:repeat(3,1fr)}
+@media (max-width:1050px){.svc,.sv2{grid-template-columns:1fr 1fr}}@media (max-width:620px){.svc,.sv2{grid-template-columns:1fr}}

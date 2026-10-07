@@ -71,7 +71,7 @@ function startScene1(){if(s1fx)return;const s=document.getElementById('s1');s1fx
 addEventListener('scroll',()=>{const y=scrollY;document.getElementById('s1ph').style.transform='translateY('+(y*.35)+'px) scale('+(1+y*.0004)+')'},{passive:true});
 // ---------- scène 2 : rassemblement ----------
 const SL={coworking:'service.html?s=coworking',formations:'formations.html',domiciliation:'service.html?s=domiciliation',bureaux:'service.html?s=bureaux',incubateur:'service.html?s=incubateur'};
-const hs=document.getElementById('heroes');hs.innerHTML=SERV.map((s,i)=>'<a class="hero-c" href="'+SL[s[0]]+'"><img src="'+s[3]+'" alt=""><span>Unité IA-0'+(i+1)+'</span><b>'+s[1]+'</b></a>').join('');
+const hs=document.getElementById('heroes');hs.innerHTML=SERV.filter(s=>s[0]!=='detente').map((s,i)=>'<a class="hero-c" href="'+SL[s[0]]+'"><img src="'+s[3]+'" alt=""><span>Unité IA-0'+(i+1)+'</span><b>'+s[1]+'</b></a>').join('');
 const HC=[...hs.children],asm=document.getElementById('asm'),afx=FX(document.getElementById('afx'),{shake:asm.querySelector('.stk')});
 const START=[[-1.4,-1],[1.5,-.9],[-1.5,.8],[1.4,1],[0,1.6]];let done=false;
 function asmUpd(){const r=asm.getBoundingClientRect(),tot=r.height-innerHeight,p=Math.min(Math.max(-r.top/tot,0),1),k=Math.min(p/.75,1),e=1-Math.pow(1-k,3);

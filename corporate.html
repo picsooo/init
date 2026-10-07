@@ -30,7 +30,7 @@
 <script src="data.js"></script><script src="core.js"></script>
 <script>
 document.getElementById('p1').src=PH.hall;document.getElementById('tb').innerHTML='<a href="tel:'+CO.telh+'">☎ '+CO.tel+'</a> · <a href="mailto:'+CO.mail+'">'+CO.mail+'</a>';
-document.getElementById('sv').innerHTML=SERV.map(s=>'<a class="s2 rv" href="'+(s[0]==='formations'?'formations.html':'service.html?s='+s[0])+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><div><small>'+s[1]+'</small><h3>'+s[2]+'</h3><ul>'+s[4].slice(0,3).map(x=>'<li>'+x+'</li>').join('')+'</ul></div></a>').join('');
+document.getElementById('sv').innerHTML=SERV.map(s=>'<a class="s2 rv" href="'+(s[0]==='formations'?'formations.html':s[0]==='detente'?'galerie.html':'service.html?s='+s[0])+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><div><small>'+s[1]+'</small><h3>'+s[2]+'</h3><ul>'+s[4].slice(0,3).map(x=>'<li>'+x+'</li>').join('')+'</ul></div></a>').join('');
 document.getElementById('fp').innerHTML=['chatgpt','delegue','formateur'].map(k=>{const f=F.find(x=>x[0]===k);return '<a class="fc rv" href="formation.html?f='+k+'" style="--c:'+CAT[f[2]][1]+'"><span class="badge">Programme complet</span><span class="tg">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="meta"><span>'+FD[k].duree.split(' (')[0].split(' +')[0]+'</span><span>Découvrir →</span></div></a>'}).join('');
 document.getElementById('eq').innerHTML=EQUIP.map(e=>'<div class="rv" style="background:#fff;color:var(--n)">'+icon(e[0])+'<h3>'+e[1]+'</h3><p style="color:var(--mut)">'+e[2]+'</p></div>').join('');
 document.getElementById('cbg').src=PH.hall2;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel;reveal();
