@@ -11,7 +11,7 @@
   <h1 style="margin-top:18px">L'écosystème qui<br><b>propulse</b> votre <span class="rot" id="rot">projet</span>.</h1>
   <p class="lead">Coworking, formations, domiciliation, bureaux privatifs et incubateur : un hub professionnel complet pour chaque étape de votre développement.</p>
   <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn b" href="rendez-vous.html">Visiter les espaces</a><a class="btn o" href="#espaces">Découvrir nos services</a></div></div>
-  <div><div class="hstats"><div><b class="lbl3">Membres actifs</b></div><div><b class="lbl3">Formations</b></div><div><b class="lbl3">Entreprises</b></div><div><b class="lbl3">Espaces</b></div></div></div>
+  <div><div class="hstats"><div><b data-n="423" data-s="">0</b><span>membres actifs</span></div><div><b data-n="38" data-s="">0</b><span>formations</span></div><div><b data-n="17" data-s="">0</b><span>entreprises</span></div><div><b class="lbl3" style="margin-top:6px">Domiciliation</b><span>adresse légale et fiscale</span></div></div></div>
  </div></section>
 
 <section><div class="wrap about">
@@ -51,7 +51,7 @@
 <script>
 document.getElementById('hbg').src=PH.hall;document.getElementById('abimg').src=PH.form1;
 const W=['projet','startup','carrière','entreprise'];let wi=0;setInterval(()=>{wi=(wi+1)%W.length;const r=document.getElementById('rot');r.style.opacity=0;setTimeout(()=>{r.textContent=W[wi];r.style.opacity=1},300)},2600);document.getElementById('rot').style.transition='opacity .3s';
-document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n,s=el.dataset.s||'+';let t0=null;const st=t=>{t0=t0||t;const p=Math.min((t-t0)/1600,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p===1?s:'');if(p<1)requestAnimationFrame(st)};setTimeout(()=>requestAnimationFrame(st),500)});
+document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n,s=el.dataset.s!==undefined?el.dataset.s:'+';let t0=null;const st=t=>{t0=t0||t;const p=Math.min((t-t0)/1600,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p===1?s:'');if(p<1)requestAnimationFrame(st)};setTimeout(()=>requestAnimationFrame(st),500)});
 document.getElementById('svc').innerHTML=SERV.map((s,i)=>'<a class="sc rv" id="'+s[0]+'" href="'+(s[0]==='formations'?'formations.html':'service.html?s='+s[0])+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><h3><small>'+s[1]+'</small>'+s[2]+'</h3><ul>'+s[4].map(x=>'<li>'+x+'</li>').join('')+'</ul></a>').join('');
 document.getElementById('eq').innerHTML=EQUIP.map(e=>'<div class="rv">'+icon(e[0])+'<h3>'+e[1]+'</h3><p>'+e[2]+'</p></div>').join('');
 document.getElementById('fprev').innerHTML=['chatgpt','negociation','loi','initmkt','accueil','formateur'].map(k=>{const f=F.find(x=>x[0]===k);return '<a class="fc rv" href="formation.html?f='+k+'" style="--c:'+CAT[f[2]][1]+'"><span class="tg">'+CAT[f[2]][0]+'</span><h3>'+f[1]+'</h3><p>'+f[3]+'</p><div class="meta"><span>'+(FD[f[0]]?FD[f[0]].duree.split(' (')[0].split(' +')[0]:'Groupe de 15 max.')+'</span><span>Découvrir →</span></div></a>'}).join('');
