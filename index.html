@@ -49,7 +49,7 @@
 </main><div id="ftr"></div>
 <script src="data.js"></script><script src="core.js"></script>
 <script>
-document.getElementById('hbg').src=PH.hall;document.getElementById('abimg').src=PH.form1;
+document.getElementById('hbg').src=PH.hall2;document.getElementById('abimg').src=PH.form1;
 const W=['projet','startup','carrière','entreprise'];let wi=0;setInterval(()=>{wi=(wi+1)%W.length;const r=document.getElementById('rot');r.style.opacity=0;setTimeout(()=>{r.textContent=W[wi];r.style.opacity=1},300)},2600);document.getElementById('rot').style.transition='opacity .3s';
 document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n,s=el.dataset.s||'+';let t0=null;const st=t=>{t0=t0||t;const p=Math.min((t-t0)/1600,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p===1?s:'');if(p<1)requestAnimationFrame(st)};setTimeout(()=>requestAnimationFrame(st),500)});
 document.getElementById('svc').innerHTML=SERV.map((s,i)=>'<a class="sc rv" id="'+s[0]+'" href="'+(s[0]==='formations'?'formations.html':'service.html?s='+s[0])+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><h3><small>'+s[1]+'</small>'+s[2]+'</h3><ul>'+s[4].map(x=>'<li>'+x+'</li>').join('')+'</ul></a>').join('');

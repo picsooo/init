@@ -160,8 +160,6 @@ html[lang=en] .hero h1{font-size:clamp(44px,6.2vw,96px)}
 @media (max-width:1050px){.svc{grid-template-columns:1fr 1fr}.biz{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){.svc,.biz{grid-template-columns:1fr}}
 .svc .sc{padding:22px}.svc .sc h3{font-size:clamp(17px,1.4vw,21px);line-height:1.15}.svc .sc h3 small{font-size:11px}
-/* hero : recadrage pour sortir la porte (à gauche) du cadre */
-.hero .bg img{object-position:78% 55%;transform-origin:78% 55%;animation:kb2 18s ease-out forwards}
-@keyframes kb2{from{transform:scale(1.45)}to{transform:scale(1.32)}}
-.h2c .pic img{object-position:80% 55%}
-.h2c .pic{overflow:hidden;border-radius:28px}.h2c .pic img{transform:scale(1.35);transform-origin:80% 55%}
+/* hero : photo de l'accueil (logo) à la place du salon */
+.hero .bg img{object-position:50% 60%}
+.h2c .pic img{object-position:50% 60%}

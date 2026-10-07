@@ -41,7 +41,7 @@
 <button class="sndbtn" id="snd" type="button" aria-label="Son">🔇</button>
 <script src="data.js"></script><script src="core.js"></script><script src="fx.js"></script><script src="sfx.js"></script>
 <script>
-document.getElementById('s1i').src=PH.hall;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel;
+document.getElementById('s1i').src=PH.hall2;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel;
 const sb=document.getElementById('snd');const setSnd=v=>{v?SFX.enable():SFX.disable();sb.textContent=v?'🔊':'🔇'};sb.onclick=()=>setSnd(!SFX.on);
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 // ---------- générique d'ouverture ----------
