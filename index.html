@@ -49,7 +49,7 @@
 </main><div id="ftr"></div>
 <script src="data.js"></script><script src="core.js"></script>
 <script>
-document.getElementById('hbg').src=PH.hall;(function(){const P=[[PH.hall2,'Accueil'],[PH.form2,'Salle de formation'],[PH.bureaux,'Bureaux privatifs'],[PH.hall,'Espace lounge'],[PH.form1,'Formation']],w=document.getElementById('sl3'),d=w.querySelector('.sl3d');
+document.getElementById('hbg').src=PH.hall;(function(){const P=[[PH.hall2,'Accueil'],[PH.jardin,'Jardin'],[PH.form2,'Salle de formation'],[PH.interior,'Espace intérieur'],[PH.bureaux,'Bureaux privatifs'],[PH.jardin2,'Espace extérieur'],[PH.hall,'Espace lounge']],w=document.getElementById('sl3'),d=w.querySelector('.sl3d');
  P.forEach((p,i)=>{const im=document.createElement('img');im.src=p[0];im.alt=p[1];im.loading=i?'lazy':'eager';if(!i)im.className='on';w.insertBefore(im,w.firstChild);const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Photo '+(i+1));if(!i)b.className='on';b.onclick=()=>go(i,1);d.appendChild(b)});
  const imgs=[...w.querySelectorAll('img')].reverse(),dots=[...d.children];let k=0,t;
  function go(n,u){k=(n+P.length)%P.length;imgs.forEach((m,i)=>m.classList.toggle('on',i===k));dots.forEach((m,i)=>m.classList.toggle('on',i===k));if(u){clearInterval(t);t=setInterval(()=>go(k+1),4500)}}
