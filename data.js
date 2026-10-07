@@ -100,6 +100,11 @@ incubateur:{t:'Incubateur',h:'Faites grandir votre startup',img:PH.dom,grp:'Espa
  intro:'Un accompagnement pour transformer une idée en entreprise solide : mentorat, réseau d\'experts et d\'investisseurs, ateliers spécialisés et espace de travail dédié.',
  incl:['Mentorat et accompagnement personnalisé','Réseau d\'experts et d\'investisseurs','Ateliers et workshops spécialisés','Espace de travail dédié à votre projet','Accès aux formations du hub','Mise en relation avec la communauté'],
  etapes:[['Candidature','Vous nous présentez votre projet.'],['Sélection','Un entretien pour évaluer le projet et vos besoins.'],['Accompagnement','Mentorat, ateliers et suivi régulier.'],['Lancement','Vous êtes prêt à lancer et faire grandir votre activité.']],
- pour:['Startups en phase d\'idée ou de lancement','Porteurs de projets innovants','Étudiants entrepreneurs','Projets à impact']}
+ pour:['Startups en phase d\'idée ou de lancement','Porteurs de projets innovants','Étudiants entrepreneurs','Projets à impact']},
+salles:{t:'Location de salle',h:'Une salle équipée pour vos réunions et formations',img:PH.salle2,grp:'Espaces',
+ intro:'Louez une salle de réunion ou de formation à Saïd Hamdine, à l\'heure, à la demi-journée ou à la journée. Idéal pour recevoir vos clients, animer une formation ou réunir votre équipe dans un cadre professionnel.',
+ incl:['Salles de réunion et de formation','Location à l\'heure, à la demi-journée ou à la journée','Wi-Fi haut débit inclus','Mobilier adapté à chaque format','Accueil de vos participants','Accès au jardin et aux espaces communs'],
+ formules:[['À l\'heure','Pour une réunion client ou un entretien.'],['Demi-journée','Pour un atelier ou une présentation.'],['Journée','Pour une formation ou un séminaire.']],
+ pour:['Entreprises et équipes','Formateurs et consultants','Associations','Porteurs de projet']}
 };
-const SORDER=['creation','domiciliation','boite','assistance','coworking','bureaux','incubateur'];
+const SORDER=['creation','domiciliation','boite','assistance','coworking','incubateur','bureaux','salles'];
