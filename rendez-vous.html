@@ -20,7 +20,7 @@
 <script>
 const pre=new URLSearchParams(location.search).get('s')||'coworking';
 const OPT=[['coworking','Coworking'],['bureaux','Bureaux privatifs'],['domiciliation','Domiciliation'],['creation','Création d\'entreprise'],['boite','Boîte postale'],['assistance','Assistance administrative'],['formations','Formations'],['incubateur','Incubateur']];document.getElementById('svo').innerHTML=OPT.map(s=>'<label><input type="radio" name="sv" value="'+s[0]+'"'+(s[0]===pre?' checked':'')+'><span>'+s[1]+'</span></label>').join('');
-document.getElementById('sl').innerHTML=['09:00','10:30','12:00','14:00','15:30','17:00','18:30','19:30'].map((h,i)=>'<label><input type="radio" name="sl" value="'+h+'"'+(i===1?' checked':'')+'><span>'+h+'</span></label>').join('');
+document.getElementById('sl').innerHTML=['08:30','09:30','10:30','11:30','13:00','14:00','15:00','15:30'].map((h,i)=>'<label><input type="radio" name="sl" value="'+h+'"'+(i===1?' checked':'')+'><span>'+h+'</span></label>').join('');
 const d=new Date();d.setDate(d.getDate()+1);document.getElementById('dt').min=d.toISOString().slice(0,10);
 const t1=document.getElementById('t1');t1.href='tel:'+CO.telh;t1.textContent=CO.tel;const m1=document.getElementById('m1');m1.href='mailto:'+CO.mail;m1.textContent=CO.mail;
 document.getElementById('rf').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée ! Nous vous rappelons.')};reveal();
