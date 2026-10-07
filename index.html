@@ -15,7 +15,7 @@
  </div></section>
 
 <section><div class="wrap about">
- <div class="ph rv"><img id="abimg" alt="Salle de formation"></div>
+ <div class="ph rv"><div class="slide3" id="sl3"><button type="button" class="sl3p" aria-label="Photo précédente">‹</button><button type="button" class="sl3n" aria-label="Photo suivante">›</button><div class="sl3d"></div></div></div>
  <div class="rv"><span class="kick">À propos</span><h2 style="margin-top:16px">Un hub pensé pour <em>les entrepreneurs</em>.</h2>
   <p class="lead" style="margin-top:20px">Initiative Academy est un hub professionnel complet, situé à Saïd Hamdine, Alger, conçu pour accompagner chaque entrepreneur à chaque étape de son développement.</p>
   <ul class="checks"><li>Espace moderne et entièrement équipé</li><li>Communauté d'entrepreneurs dynamiques</li><li>Services professionnels intégrés</li><li>Localisation stratégique au cœur d'Alger</li></ul>
@@ -49,7 +49,12 @@
 </main><div id="ftr"></div>
 <script src="data.js"></script><script src="core.js"></script>
 <script>
-document.getElementById('hbg').src=PH.hall;document.getElementById('abimg').src=PH.form1;
+document.getElementById('hbg').src=PH.hall;(function(){const P=[[PH.hall2,'Accueil'],[PH.form2,'Salle de formation'],[PH.bureaux,'Bureaux privatifs'],[PH.hall,'Espace lounge'],[PH.form1,'Formation']],w=document.getElementById('sl3'),d=w.querySelector('.sl3d');
+ P.forEach((p,i)=>{const im=document.createElement('img');im.src=p[0];im.alt=p[1];im.loading=i?'lazy':'eager';if(!i)im.className='on';w.insertBefore(im,w.firstChild);const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Photo '+(i+1));if(!i)b.className='on';b.onclick=()=>go(i,1);d.appendChild(b)});
+ const imgs=[...w.querySelectorAll('img')].reverse(),dots=[...d.children];let k=0,t;
+ function go(n,u){k=(n+P.length)%P.length;imgs.forEach((m,i)=>m.classList.toggle('on',i===k));dots.forEach((m,i)=>m.classList.toggle('on',i===k));if(u){clearInterval(t);t=setInterval(()=>go(k+1),4500)}}
+ w.querySelector('.sl3p').onclick=()=>go(k-1,1);w.querySelector('.sl3n').onclick=()=>go(k+1,1);t=setInterval(()=>go(k+1),4500);
+ let x0=null;w.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});w.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(k+(dx<0?1:-1),1);x0=null})})();
 const W=['projet','startup','carrière','entreprise'];let wi=0;setInterval(()=>{wi=(wi+1)%W.length;const r=document.getElementById('rot');r.style.opacity=0;setTimeout(()=>{r.textContent=W[wi];r.style.opacity=1},300)},2600);document.getElementById('rot').style.transition='opacity .3s';
 document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n,s=el.dataset.s!==undefined?el.dataset.s:'+';let t0=null;const st=t=>{t0=t0||t;const p=Math.min((t-t0)/1600,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p===1?s:'');if(p<1)requestAnimationFrame(st)};setTimeout(()=>requestAnimationFrame(st),500)});
 document.getElementById('svc').innerHTML=SERV.map((s,i)=>'<a class="sc rv" id="'+s[0]+'" href="'+(s[0]==='formations'?'formations.html':'service.html?s='+s[0])+'"><img src="'+s[3]+'" alt="'+s[1]+'" loading="lazy"><h3><small>'+s[1]+'</small>'+s[2]+'</h3><ul>'+s[4].map(x=>'<li>'+x+'</li>').join('')+'</ul></a>').join('');
