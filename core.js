@@ -16,7 +16,7 @@
  const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
  window.reveal=()=>document.querySelectorAll('.rv:not([data-o])').forEach(e=>{e.dataset.o=1;io.observe(e)});reveal();
 })();
-const FORM_TO='https://formsubmit.co/ajax/'+(window.CO?CO.mail:'contact@initiativeacademy.dz');
+const FORM_TO=/vercel\.app$|^localhost$/.test(location.hostname)?'https://formsubmit.co/ajax/'+(window.CO?CO.mail:'contact@initiativeacademy.dz'):'/contact.php';
 function formData(f){const o={};f.querySelectorAll('input,select,textarea').forEach(el=>{if(el.type==='submit'||el.type==='button')return;if((el.type==='radio'||el.type==='checkbox')&&!el.checked)return;let k=el.name&&!['sv','sl'].includes(el.name)?el.name:'';if(el.name==='sv')k='Service souhaité';if(el.name==='sl')k='Créneau';if(!k){const l=el.closest('label');k=l?[...l.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(' ').trim():'Champ'}if(!k)k='Champ';k=k.replace(/\s*\*$/,'');const v=(el.value||'').trim();if(!v)return;o[k]=o[k]?o[k]+', '+v:v});return o}
 function okForm(f,msg,subj){const b=f.querySelector('button[type=submit]'),t=b.textContent;const data=formData(f);data._subject=(subj||'Nouvelle demande')+' — site initiativeacademy.dz'+(data['Formation']?' : '+data['Formation']:data['Service']?' : '+data['Service']:'');data._template='table';data._captcha='false';data['Page']=location.href;const em=data['E-mail'];if(em)data._replyto=em;
 b.textContent='Envoi en cours…';b.disabled=true;

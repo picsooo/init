@@ -1,4 +1,4 @@
-const IMG='https://initiativeacademy.dz/wp-content/uploads/';
+const IMG=/vercel\.app$/.test(location.hostname)?'https://initiativeacademy.dz/wp-content/uploads/':'/wp-content/uploads/';
 const PH={logo:'img/logo-color.png',hall:IMG+'2026/08/hall-dentree01.jpeg',hall2:IMG+'2026/08/hall-dentree.jpeg',form1:'img/formation-atelier.jpg',form2:'img/salle-formation.jpg',bureaux:'img/bureau-prive.jpg',dom:IMG+'2026/06/ia-domiciliation-room.jpg',jardin:'img/jardin-travail.jpg',jardin2:'img/jardin-detente.jpg',reception2:IMG+'2026/06/ia-reception-2.jpg',salle2:'img/salle-reunion.jpg',interior:'img/salle-formation-2.jpg',notes:'img/notes-formation.jpg',carnet:'img/carnet-ia.jpg'};
 // Secours : si une ancienne photo WordPress ne charge plus, on affiche une photo locale
 (function(){const FB={'hall-dentree01':'img/bureau-prive.jpg','hall-dentree.':'img/carnet-ia.jpg','ia-domiciliation':'img/salle-reunion.jpg','ia-reception-2':'img/jardin-travail.jpg'};window.addEventListener('error',e=>{const t=e.target;if(!t||t.tagName!=='IMG'||!/wp-content/.test(t.src))return;const k=Object.keys(FB).find(k=>t.src.includes(k));t.src=k?FB[k]:'img/salle-formation.jpg'},true)})();

@@ -1,0 +1,33 @@
+# Initiative Academy — nouveau site (HTML statique)
+DirectoryIndex index.html index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# HTTPS obligatoire (sauf outils cPanel)
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# www -> sans www
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# Anciennes versions de la maquette -> accueil
+RewriteRule ^(corporate|v3|v4|v5|v6|video)\.html$ / [R=301,L]
+# Anciennes pages WordPress -> pages équivalentes
+RewriteRule ^formations/?$ /formations.html [R=301,L]
+RewriteRule ^contact/?$ /rendez-vous.html [R=301,L]
+RewriteRule ^galerie/?$ /galerie.html [R=301,L]
+RewriteRule ^mawahub/?$ /a-propos.html [R=301,L]
+RewriteRule ^a-propos/?$ /a-propos.html [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /index.html
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType text/css "access plus 1 hour"
+ExpiresByType application/javascript "access plus 1 hour"
+</IfModule>
