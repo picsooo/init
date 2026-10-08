@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/corporate.html", "destination": "/", "permanent": true },
+    { "source": "/v4.html", "destination": "/", "permanent": true },
+    { "source": "/v5.html", "destination": "/", "permanent": true }
+  ]
+}
