@@ -9,7 +9,7 @@
 </main><div class="lb" id="lb"><button type="button" aria-label="Fermer">✕</button><img alt=""></div><div id="ftr"></div>
 <script src="data.js"></script><script src="core.js"></script>
 <script>
-const G=[[PH.jardin2,'Espace extérieur'],[PH.hall2,'Accueil'],[PH.hall,'Hall d\'entrée'],[PH.salle2,'Salle de formation'],[PH.interior,'Espace intérieur'],[PH.jardin,'Jardin'],[PH.reception2,'Réception'],[PH.form2,'Salle de formation'],[PH.bureaux,'Bureaux privatifs'],[PH.form1,'Espace formation']];
+const G=[[PH.jardin2,'Espace détente'],[PH.hall2,'Accueil'],[PH.salle2,'Salle de réunion'],[PH.interior,'Salle de formation'],[PH.jardin,'Travailler au jardin'],[PH.form2,'Salle de formation'],[PH.bureaux,'Bureaux privatifs'],[PH.form1,'Espace formation'],[PH.notes,'Atelier de formation'],[PH.carnet,'Supports de formation']];
 document.getElementById('gal').innerHTML=G.map(g=>'<a href="'+g[0]+'" class="rv"><img src="'+g[0]+'" alt="'+g[1]+'" loading="lazy"><span>'+g[1]+'</span></a>').join('');
 const lb=document.getElementById('lb');document.getElementById('gal').onclick=e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();lb.querySelector('img').src=a.href;lb.classList.add('open')};lb.onclick=()=>lb.classList.remove('open');
 document.getElementById('cbg').src=PH.hall2;const ct=document.getElementById('ctel');ct.href='tel:'+CO.telh;ct.textContent='☎ '+CO.tel; reveal();
