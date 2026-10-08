@@ -184,3 +184,6 @@ nav a[href="salon.html"]{color:#6cc4ec}
 @keyframes sxp2{0%{box-shadow:0 0 0 0 rgba(108,196,236,.8)}70%{box-shadow:0 0 0 10px rgba(108,196,236,0)}100%{box-shadow:0 0 0 0 rgba(108,196,236,0)}}
 @media (max-width:620px){#sx-pill{left:16px;bottom:calc(76px + env(safe-area-inset-bottom,0px));justify-content:center;font-size:12px}}
 .v2 nav a[href="salon.html"]{color:var(--b)}
+.f input.err,.f textarea.err,.f select.err{border-color:#e5484d!important;box-shadow:0 0 0 3px rgba(229,72,77,.18)!important}
+.f button.warn{background:#e5484d!important}
+.f label:has(input[required])>:first-child,.f label:has(input[required]){}
