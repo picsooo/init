@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="fr"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#06122b">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#06122b">
 <link rel="stylesheet" href="style.css">
 <title>Service — Initiative Academy</title></head><body>
 <div id="hdr"></div><main>
@@ -30,5 +30,5 @@ document.getElementById('steps').innerHTML=st.map((x,i)=>'<div><span>'+(d.etapes
 document.getElementById('pour').innerHTML=d.pour.map(x=>'<span>'+x+'</span>').join('');
 const tl=document.getElementById('tl');tl.href='tel:'+CO.telh;tl.textContent=CO.tel;
 document.getElementById('oth').innerHTML=SORDER.filter(x=>x!==k).slice(0,5).map(x=>'<a class="s2" href="service.html?s='+x+'"><img src="'+SD[x].img+'" alt="" loading="lazy"><div><small>'+SD[x].grp+'</small><h3>'+SD[x].t+'</h3></div></a>').join('');
-document.getElementById('contact').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée !')};reveal();
+document.getElementById('contact').onsubmit=e=>{e.preventDefault();okForm(e.target,'Demande envoyée !','Demande de service')};reveal();
 </script><script src="i18n.js"></script></body></html>
