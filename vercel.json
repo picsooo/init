@@ -2,6 +2,11 @@
   "redirects": [
     { "source": "/corporate.html", "destination": "/", "permanent": true },
     { "source": "/v4.html", "destination": "/", "permanent": true },
-    { "source": "/v5.html", "destination": "/", "permanent": true }
+    { "source": "/v5.html", "destination": "/", "permanent": true },
+    { "source": "/cpanel", "destination": "https://mail.initiativeacademy.dz:2083", "permanent": false },
+    { "source": "/cpanel/:path*", "destination": "https://mail.initiativeacademy.dz:2083", "permanent": false },
+    { "source": "/webmail", "destination": "https://mail.initiativeacademy.dz:2096", "permanent": false },
+    { "source": "/webmail/:path*", "destination": "https://mail.initiativeacademy.dz:2096", "permanent": false },
+    { "source": "/wp-admin", "destination": "https://mail.initiativeacademy.dz:2083", "permanent": false }
   ]
 }
