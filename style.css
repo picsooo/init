@@ -187,3 +187,5 @@ nav a[href="salon.html"]{color:#6cc4ec}
 .f input.err,.f textarea.err,.f select.err{border-color:#e5484d!important;box-shadow:0 0 0 3px rgba(229,72,77,.18)!important}
 .f button.warn{background:#e5484d!important}
 .f label:has(input[required])>:first-child,.f label:has(input[required]){}
+
+.fst{display:none;margin-top:14px;padding:14px 16px;border-radius:14px;font-size:15px;line-height:1.5}.fst.wait,.fst.ok,.fst.ko{display:block}.fst.wait{background:#eef5fb;color:#06122b}.fst.ok{background:#e7f7ee;color:#0d5c32;border:1px solid #9fdcb8}.fst.ko{background:#fdecec;color:#8a1c1c;border:1px solid #f2b3b3}.fst a{color:inherit;font-weight:700;text-decoration:underline}
