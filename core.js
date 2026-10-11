@@ -17,7 +17,7 @@
  window.reveal=()=>document.querySelectorAll('.rv:not([data-o])').forEach(e=>{e.dataset.o=1;io.observe(e)});reveal();
 })();
 const FS_URL='https://formsubmit.co/ajax/'+(window.CO?CO.mail:'contact@initiativeacademy.dz');
-function postJSON(u,d,sig){return fetch(u,{signal:sig,method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(r=>{const ct=r.headers.get('content-type')||'';if(!r.ok||ct.indexOf('json')<0)throw 1;return r.json()}).then(j=>{if(j.success===false||j.success==='false')throw new Error(j.message||'refus');return j})}
+function postJSON(u,d,sig){return fetch(u,{signal:sig,method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(d)}).then(r=>{if(!r.ok)throw 1;return r.text()}).then(x=>{try{return JSON.parse(x)}catch(_){throw 1}}).then(j=>{if(j.success===false||j.success==='false')throw new Error(j.message||'refus');return j})}
 // contact.php (hébergement PHP/cPanel) puis repli automatique sur FormSubmit (Vercel ne lit pas le PHP)
 function sendForm(d,sig){return postJSON('/contact.php',d,sig).catch(()=>postJSON(FS_URL,d,sig))}
 function formData(f){const o={};f.querySelectorAll('input,select,textarea').forEach(el=>{if(el.type==='submit'||el.type==='button')return;if((el.type==='radio'||el.type==='checkbox')&&!el.checked)return;let k=el.name&&!['sv','sl'].includes(el.name)?el.name:'';if(el.name==='sv')k='Service souhaité';if(el.name==='sl')k='Créneau';if(!k){const l=el.closest('label');k=l?[...l.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(' ').trim():'Champ'}if(!k)k='Champ';k=k.replace(/\s*\*$/,'');const v=(el.value||'').trim();if(!v)return;o[k]=o[k]?o[k]+', '+v:v});return o}
