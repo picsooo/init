@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="fr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#06122b">
-<link rel="stylesheet" href="style.css?v=1014">
+<link rel="stylesheet" href="style.css?v=1015">
 <title>Prendre rendez-vous — Initiative Academy</title></head><body>
 <div id="hdr"></div><main>
 <section class="page-h"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 8 188 192h-40L100 88 52 192H12z" fill="#fff"/><path d="M60 140h96l-14 22H46z" fill="#5b9bff"/></svg><div class="wrap" style="position:relative;z-index:2"><span class="kick" style="color:#5b9bff">Rendez-vous</span><h1 style="margin-top:16px">Visitez <b>nos espaces</b>.</h1><p class="lead">Choisissez le service qui vous intéresse et le moment qui vous convient. Notre équipe vous confirme le rendez-vous par téléphone.</p></div></section>
@@ -16,7 +16,7 @@
   <button class="btn b" type="submit">Confirmer ma demande de rendez-vous</button></form>
 </div></section>
 </main><div id="ftr"></div>
-<script src="data.js"></script><script src="core.js?v=1014"></script>
+<script src="data.js"></script><script src="core.js?v=1015"></script>
 <script>
 const pre=new URLSearchParams(location.search).get('s')||'coworking';
 const OPT=[['coworking','Coworking'],['bureaux','Bureaux privatifs'],['salles','Location de salle'],['domiciliation','Domiciliation'],['creation','Création d\'entreprise'],['boite','Boîte postale'],['assistance','Assistance administrative'],['formations','Formations'],['incubateur','Incubateur']];document.getElementById('svo').innerHTML=OPT.map(s=>'<label><input type="radio" name="sv" value="'+s[0]+'"'+(s[0]===pre?' checked':'')+'><span>'+s[1]+'</span></label>').join('');

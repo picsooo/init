@@ -35,11 +35,5 @@
       "destination": "https://mail.initiativeacademy.dz:2096",
       "permanent": false
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/contact",
-      "destination": "https://ia-formulaires.netlify.app/contact"
-    }
   ]
 }
